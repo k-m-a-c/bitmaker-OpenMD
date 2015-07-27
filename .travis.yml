@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.2.1-p85
+  - 2.1.0
+  - 1.9.3
+gemfile:
+  - Gemfile
+branches:
+  only:
+    - master
