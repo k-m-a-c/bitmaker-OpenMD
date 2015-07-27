@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Set Ruby version
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
@@ -28,6 +30,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Puma as the app server
 gem 'puma'
+
+# Enable static asset serving and logging on Heroku
+gem 'rails_12factor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
