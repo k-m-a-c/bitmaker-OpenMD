@@ -11,13 +11,19 @@ and add a specific role to your postgres db.
 Click on the Postgres app (Mac OS X) and wait for it to start.
 
 ### Step 2: Access the postgres server from your terminal
-`psql`
+```
+psql
+```
 
 ### Step 3: Create an 'openmd' role
-`CREATE ROLE openmd WITH LOGIN;`
+```
+CREATE ROLE openmd WITH LOGIN;
+```
 
 ### Step 4: Update your database.yml file
-`username: openmd`
+```
+username: openmd
+```
 
 ### Step 5: Check for errors
 Stop and restart your rails server.
