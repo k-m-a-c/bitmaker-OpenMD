@@ -1,0 +1,54 @@
+<h1>Sign Up for OpenMD</h1>
+
+<%= form_for @patient do |f| %>
+
+  <div class="patient-field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :phone_number %>
+    <%= f.telephone_field :phone_number %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :healthcard_number %>
+    <%= f.text_field :healthcard_number %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :date_of_birth %>
+    <%= f.date_field :date_of_birth %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="patient-field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+
+<% end %>
