@@ -3,4 +3,6 @@ class Doctor < ActiveRecord::Base
   has_many :health_status_updates, through: :patients
   has_and_belongs_to_many :patients
 
+  authenticates_with_sorcery!
+
 end
