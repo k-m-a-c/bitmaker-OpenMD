@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727225713) do
+ActiveRecord::Schema.define(version: 20150728172848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20150727225713) do
   add_index "doctors", ["institution"], name: "index_doctors_on_institution", using: :btree
   add_index "doctors", ["last_name"], name: "index_doctors_on_last_name", using: :btree
   add_index "doctors", ["specialization"], name: "index_doctors_on_specialization", using: :btree
+
+  create_table "health_records", force: :cascade do |t|
+    t.text     "allergies"
+    t.text     "medications"
+    t.text     "surgeries"
+    t.text     "existing_conditions"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "patients", force: :cascade do |t|
     t.string   "first_name",                  null: false
