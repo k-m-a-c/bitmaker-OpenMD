@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728190739) do
+ActiveRecord::Schema.define(version: 20150728212048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150728190739) do
     t.text     "existing_conditions"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "patient_id"
   end
 
   create_table "health_status_updates", force: :cascade do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150728190739) do
     t.integer  "mental_health_score"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -102,6 +104,8 @@ ActiveRecord::Schema.define(version: 20150728190739) do
     t.datetime "last_logout_at"
     t.datetime "last_activity_at"
     t.string   "last_login_from_ip_address"
+    t.integer  "health_record_id"
+    t.integer  "health_status_update_id"
   end
 
   add_index "patients", ["email"], name: "index_patients_on_email", unique: true, using: :btree
