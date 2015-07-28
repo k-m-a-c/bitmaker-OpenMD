@@ -5,7 +5,7 @@ class PatientSessionsController < ApplicationController
     end
 
     def create
-      if @patient = login(params[:email], params[:password])
+      if @patient = patient_login(params[:email], params[:password])
           redirect_back_or_to(:patients, notice: 'Login successful')
       else
           flash.now[:alert] = 'Login failed'
@@ -14,7 +14,7 @@ class PatientSessionsController < ApplicationController
     end
 
     def destroy
-      logout
+      patient_logout
       redirect_to(:patients, notice: 'Logged out!')
     end
 end
