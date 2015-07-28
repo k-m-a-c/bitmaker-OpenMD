@@ -1,0 +1,2 @@
+module HealthStatusUpdatesHelper
+end
