@@ -20,6 +20,8 @@ gem 'puma'
 # Enable static asset serving and logging on Heroku
 gem 'rails_12factor'
 
+# Use Figaro for ENV management
+gem 'figaro'
 
 group :development, :test do
   gem 'rake'
