@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728173431) do
+ActiveRecord::Schema.define(version: 20150729195248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150728173431) do
     t.text     "existing_conditions"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "patient_id"
   end
 
   create_table "health_status_updates", force: :cascade do |t|
@@ -56,20 +57,23 @@ ActiveRecord::Schema.define(version: 20150728173431) do
     t.integer  "mental_health_score"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string   "first_name",                  null: false
-    t.string   "last_name",                   null: false
-    t.string   "email",                       null: false
-    t.integer  "phone_number",      limit: 8, null: false
-    t.text     "healthcard_number",           null: false
+    t.string   "first_name",                        null: false
+    t.string   "last_name",                         null: false
+    t.string   "email",                             null: false
+    t.integer  "phone_number",            limit: 8, null: false
+    t.text     "healthcard_number",                 null: false
     t.string   "gender"
     t.date     "date_of_birth"
     t.string   "city"
     t.string   "country"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "health_record_id"
+    t.integer  "health_status_update_id"
   end
 
   add_index "patients", ["email"], name: "index_patients_on_email", using: :btree
