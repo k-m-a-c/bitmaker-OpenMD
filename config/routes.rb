@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   resources :patient_sessions
 
-  get 'patient_login' => 'patient_sessions#new', :as => :patient_login
-  post 'patient_logout' => 'patient_sessions#destroy', :as => :patient_logout
+  get 'patient_login' => 'patient_sessions#new', :as => :login
+  post 'patient_logout' => 'patient_sessions#destroy', :as => :logout
 
 
 # Doctor Session Routes

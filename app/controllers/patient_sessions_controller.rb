@@ -5,7 +5,7 @@ class PatientSessionsController < ApplicationController
     end
 
     def create
-      if @patient = patient_login(params[:email], params[:password])
+      if @patient = login(params[:email], params[:password])
           redirect_back_or_to(:patients, notice: 'Login successful')
       else
           flash.now[:alert] = 'Login failed'
