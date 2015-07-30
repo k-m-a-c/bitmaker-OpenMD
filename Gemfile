@@ -27,6 +27,7 @@ gem 'rails_12factor'
 gem 'figaro'
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'rake'
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'
