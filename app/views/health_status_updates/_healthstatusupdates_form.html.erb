@@ -1,5 +1,4 @@
 <%= form_for(@healthstatusupdate) do |f| %>
-
   <div class="field">
     <%= f.label :respiratory_rate %><br />
     <%= f.text_field :respiratory_rate %>
@@ -14,16 +13,24 @@
   </div>
   <div class="field">
     <%= f.label :blood_pressure %><br />
-    <%= f.date_field :blood_pressure %>
+    <%= f.number_field :blood_pressure %>
   </div>
     <div class="field">
     <%= f.label :physical_health_score %><br />
-    <%= f.date_field :physical_health_score %>
+    <%= f.number_field :physical_health_score, min: 1, max: 10 %>
   </div>
     <div class="field">
     <%= f.label :mental_health_score %><br />
-    <%= f.date_field :mental_health_score %>
+    <%= f.number_field :mental_health_score, min: 1, max: 10 %>
   </div>
+
+ <!--  <div class="field">
+    <%# f.label :patient_id %><br />
+    <%# f.number_field :patient_id %>
+  </div> -->
+
+<%= f.hidden_field :patient_id, value: @patient.id %>
+
   <div class="actions">
     <%= f.submit "Update Health Status" %>
   </div>
