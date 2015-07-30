@@ -1,0 +1,17 @@
+<% @healthstatusupdates.each do |healthstatusupdate| %>
+
+  <div class="healthstatusupdate">
+    <strong><%= healthstatusupdate.first_name %> <%= healthstatusupdate.last_name %></strong>
+    <ul>
+      <li><%= healthstatusupdate.email %></li>
+      <li><%= healthstatusupdate.phone_number %></li>
+      <li><%= healthstatusupdate.doctor_uid %></li>
+      <li><%= healthstatusupdate.gender %></li>
+      <li><%= healthstatusupdate.specialization %></li>
+      <li><%= healthstatusupdate.institution %></li>
+      <li><%= healthstatusupdate.city %></li>
+      <li><%= healthstatusupdate.country %></li>
+    </ul>
+  </div>
+
+<% end %>

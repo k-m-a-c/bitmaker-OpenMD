@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :doctors
+  resources :health_records
+  resources :health_status_updates
 end
