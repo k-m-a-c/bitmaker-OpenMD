@@ -5,12 +5,12 @@ class HealthStatusUpdatesController < ApplicationController
   end
 
   def show
-    @healthstatusupdate = HealthStatusUpdate.find(params[:health_status_update_id])
+    @healthstatusupdate = HealthStatusUpdate.find(params[:id])
   end
 
   def new
     @healthstatusupdate = HealthStatusUpdate.new
-    @patient = Patient.first
+    # @patient = Patient.first
     #Replace this with current_patient/sessions
   end
 
