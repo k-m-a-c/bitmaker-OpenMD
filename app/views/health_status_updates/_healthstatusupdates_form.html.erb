@@ -24,13 +24,6 @@
     <%= f.number_field :mental_health_score, min: 1, max: 10 %>
   </div>
 
- <!--  <div class="field">
-    <%# f.label :patient_id %><br />
-    <%# f.number_field :patient_id %>
-  </div> -->
-
-<%= f.hidden_field :patient_id, value: @patient.id %>
-
   <div class="actions">
     <%= f.submit "Update Health Status" %>
   </div>

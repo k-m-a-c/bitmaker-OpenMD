@@ -1,17 +1,12 @@
 <% @healthrecords.each do |healthrecord| %>
 
   <div class="healthrecord">
-    <strong><%= healthrecord.first_name %> <%= healthrecord.last_name %></strong>
+    <strong><%= healthrecord.patient.first_name %> <%= healthrecord.patient.last_name %></strong>
     <ul>
-      <li><%= healthrecord.email %></li>
-      <li><%= healthrecord.phone_number %></li>
-      <li><%= healthrecord.doctor_uid %></li>
-      <li><%= healthrecord.gender %></li>
-      <li><%= healthrecord.specialization %></li>
-      <li><%= healthrecord.institution %></li>
-      <li><%= healthrecord.city %></li>
-      <li><%= healthrecord.country %></li>
+      <li><%= healthrecord.allergies %></li>
+      <li><%= healthrecord.medications %></li>
+      <li><%= healthrecord.surgeries %></li>
+      <li><%= healthrecord.existing_conditions %></li>
     </ul>
   </div>
-
 <% end %>
