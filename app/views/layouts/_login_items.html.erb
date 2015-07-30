@@ -1,0 +1,9 @@
+<% if patient_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_patient_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to('Login', new_patient_session_path)  %>
+  </li>
+<% end %>

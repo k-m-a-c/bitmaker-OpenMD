@@ -1,4 +1,4 @@
-class Patient::ParameterSanitizer < Devise::ParameterSanitizer
+class Doctor::ParameterSanitizer < Devise::ParameterSanitizer
 
   def sign_up
     default_params.permit(
@@ -6,9 +6,10 @@ class Patient::ParameterSanitizer < Devise::ParameterSanitizer
       :last_name,
       :email,
       :phone_number,
-      :healthcard_number,
+      :doctor_uid,
       :gender,
-      :date_of_birth,
+      :specialization,
+      :institution,
       :city,
       :country,
       :password,

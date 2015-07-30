@@ -11,24 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729212012) do
+ActiveRecord::Schema.define(version: 20150730192728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "doctors", force: :cascade do |t|
-    t.string   "first_name",               null: false
-    t.string   "last_name",                null: false
-    t.string   "email",                    null: false
-    t.integer  "phone_number",   limit: 8, null: false
-    t.integer  "doctor_uid",     limit: 8, null: false
+    t.string   "first_name",                                    null: false
+    t.string   "last_name",                                     null: false
+    t.string   "email",                                         null: false
+    t.integer  "phone_number",           limit: 8,              null: false
+    t.integer  "doctor_uid",             limit: 8,              null: false
     t.string   "gender"
     t.string   "specialization"
     t.string   "institution"
     t.string   "city"
     t.string   "country"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "encrypted_password",               default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                    default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
   add_index "doctors", ["doctor_uid"], name: "index_doctors_on_doctor_uid", using: :btree
@@ -36,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150729212012) do
   add_index "doctors", ["first_name"], name: "index_doctors_on_first_name", using: :btree
   add_index "doctors", ["institution"], name: "index_doctors_on_institution", using: :btree
   add_index "doctors", ["last_name"], name: "index_doctors_on_last_name", using: :btree
+  add_index "doctors", ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true, using: :btree
   add_index "doctors", ["specialization"], name: "index_doctors_on_specialization", using: :btree
 
   create_table "health_records", force: :cascade do |t|
