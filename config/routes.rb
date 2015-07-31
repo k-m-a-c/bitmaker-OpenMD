@@ -14,9 +14,11 @@ Rails.application.routes.draw do
     sessions: 'patients/sessions'
   }
 
-  resources :patients, only: [:index]
+  resources :patients, only: [:index] do
+    resource :health_record
+    resources :health_status_updates
+  end
+
   resources :doctors, only: [:index]
 
-  resources :health_records
-  resources :health_status_updates
 end
