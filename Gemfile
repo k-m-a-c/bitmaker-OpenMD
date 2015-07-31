@@ -26,6 +26,9 @@ gem 'rails_12factor'
 # Use Figaro for ENV management
 gem 'figaro'
 
+# Styling
+gem 'bourbon'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rake'

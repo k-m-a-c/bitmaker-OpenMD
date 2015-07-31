@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     sessions: 'patients/sessions'
   }
 
-  # Feature Routes
   resources :patients, only: [:index]
   resources :doctors, only: [:index]
+
+  resources :health_records
+  resources :health_status_updates
 end

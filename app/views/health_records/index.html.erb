@@ -1,0 +1,12 @@
+<% @healthrecords.each do |healthrecord| %>
+<p>Health Records:</p>
+  <div class="healthrecord">
+    <strong><%= healthrecord.patient.first_name %> <%= healthrecord.patient.last_name %></strong>
+    <ul>
+      <li><%= healthrecord.allergies %></li>
+      <li><%= healthrecord.medications %></li>
+      <li><%= healthrecord.surgeries %></li>
+      <li><%= healthrecord.existing_conditions %></li>
+    </ul>
+  </div>
+<% end %>

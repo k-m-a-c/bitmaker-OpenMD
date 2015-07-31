@@ -1,0 +1,31 @@
+<%= form_for(@healthstatusupdate) do |f| %>
+  <div class="field">
+    <%= f.label :respiratory_rate %><br />
+    <%= f.number_field :respiratory_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :heart_rate %><br />
+    <%= f.number_field :heart_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :body_temperature %><br />
+    <%= f.number_field :body_temperature %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_pressure %><br />
+    <%= f.number_field :blood_pressure %>
+  </div>
+    <div class="field">
+    <%= f.label :physical_health_score %><br />
+    <%= f.number_field :physical_health_score, min: 1, max: 10 %>
+  </div>
+    <div class="field">
+    <%= f.label :mental_health_score %><br />
+    <%= f.number_field :mental_health_score, min: 1, max: 10 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Health Status" %>
+  </div>
+<% end %>
+
