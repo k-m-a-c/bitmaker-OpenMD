@@ -26,6 +26,9 @@ gem 'rails_12factor'
 # Use Figaro for ENV management
 gem 'figaro'
 
+# Styling
+gem 'bourbon'
+
 group :development, :test do
   gem 'rake'
   gem 'rspec-rails', '~> 3.0'
