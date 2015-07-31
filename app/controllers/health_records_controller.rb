@@ -36,7 +36,7 @@ class HealthRecordsController < ApplicationController
   end
 
   private
-  def health_record_params
+  def healthrecord_params
     params.require(:health_record).permit(
       :allergies,
       :medications,

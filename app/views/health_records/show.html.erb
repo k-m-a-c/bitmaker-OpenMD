@@ -21,28 +21,6 @@
 
 <p>
   <strong>To delete a Health Record: </strong>
-  <!-- <%= @healthrecord.destroy %> -->
 </p>
 
-<%= @healthrecord.destroy %>
-
-  <% @healthrecord.record.each do |record| %>
-    <p>
-      <%= review.comment %>
-      <br>
-      <% if review.user != nil %>
-        <em> by <%= review.user.name %></em>
-        Added on: <%= review.created_at %>
-      <% end %>
-    </p>
-<% end -%>
-
-    <div class="actions">
-      <%= f.submit "Delete record" %>
-    </div>
-  <% end %>
-
-  <%= button_to "delete", @healthrecord, :action => 'destroy', :confirm => 'Are you sure?', :id => healthrecord.id :method => :delete %>
-
-<%= link_to 'Edit', edit_healthrecord_path(@healthrecord) %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_to "Delete", health_record_path(@healthrecord), method: :delete %>
