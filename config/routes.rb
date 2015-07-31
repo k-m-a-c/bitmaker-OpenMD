@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+  get '/login', to: 'welcome#show'
 
   # Auth Routes
   devise_for :doctors, controllers: {
