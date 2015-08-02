@@ -7,4 +7,6 @@ class Patient < ActiveRecord::Base
   has_many :health_status_updates
   has_and_belongs_to_many :doctors
 
+  accepts_nested_attributes_for :health_record
+  accepts_nested_attributes_for :health_status_updates
 end

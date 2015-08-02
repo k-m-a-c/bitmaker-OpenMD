@@ -1,42 +1,53 @@
 class HealthRecordsController < ApplicationController
+  before_filter :authenticate_patient!
+
 
   def index
-    @healthrecords = HealthRecord.all
+    @health_records = HealthRecord.all
   end
 
   def show
-    @healthrecord = HealthRecord.find(params[:id])
+    @health_record = HealthRecord.find_by(:patient => current_patient.id)
   end
 
   def new
-    @healthrecord = HealthRecord.new
+    @health_record = HealthRecord.new
 
   end
 
   def edit
+    @health_record = HealthRecord.find_by(:patient => current_patient.id)
   end
 
   def create
-    @healthrecord = HealthRecord.new(health_record_params)
+    @health_record = HealthRecord.new(health_record_params)
 
-    if @healthrecord.save
-      redirect_to health_records_url
+    if @health_record.save
+      redirect_to patient_health_record_url
     else
       render :new
     end
   end
 
   def update
+    @health_record = HealthRecord.find_by(:patient => current_patient.id)
+    @health_record.update_attributes(health_record_params)
+
+    if @health_record.save
+      redirect_to patient_health_record_url
+    else
+      render :edit
+    end
   end
 
   def destroy
-      @healthrecord = HealthRecord.find(params[:id])
-      @healthrecord.destroy
-      redirect_to health_records_url
+      @health_record = HealthRecord.find_by(:patient => current_patient.id)
+      @health_record.destroy
+      redirect_to patients_path
   end
 
   private
-  def healthrecord_params
+  def health_record_params
     params.require(:health_record).permit(
       :allergies,
       :medications,

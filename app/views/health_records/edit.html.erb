@@ -1,0 +1,29 @@
+<h1>Edit your health record</h1>
+
+<%= form_for @health_record, url: patient_health_record_path do |f| %>
+
+  <div class="field">
+    <%= f.label :allergies %>
+    <%= f.text_field :allergies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :medications %>
+    <%= f.text_field :medications %>
+  </div>
+
+  <div class="field">
+    <%= f.label :surgeries %>
+    <%= f.text_field :surgeries %>
+  </div>
+
+  <div class="field">
+    <%= f.label :existing_conditions %>
+    <%= f.text_field :existing_conditions %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit "Edit my health record" %>
+  </div>
+
+<% end %>

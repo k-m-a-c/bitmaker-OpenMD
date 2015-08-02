@@ -30,7 +30,7 @@ gem 'figaro'
 gem 'bourbon'
 
 group :development, :test do
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'rake'
   gem 'rspec-rails', '~> 3.0'
   gem 'byebug'

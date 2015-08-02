@@ -2,28 +2,28 @@
   <h1>Your Health Record</h1>
   <p>
     <strong>Allergies: </strong>
-    <%= @healthrecord.allergies %>
+    <%= @health_record.allergies %>
   </p>
 
   <p>
     <strong>Medications: </strong>
-    <%= @healthrecord.medications %>
+    <%= @health_record.medications %>
   </p>
 
   <p>
     <strong>Surgeries: </strong>
-    <%= @healthrecord.surgeries %>
+    <%= @health_record.surgeries %>
   </p>
 
   <p>
     <strong>Existing Conditions: </strong>
-    <%= @healthrecord.existing_conditions %>
+    <%= @health_record.existing_conditions %>
   </p>
 
 
   <p>
-    <strong>To delete a Health Record: </strong>
+    <strong>Edit your health record </strong>
   </p>
 
-  <%= link_to "Delete", health_record_path(@healthrecord), method: :delete %>
+  <%= link_to "Edit", edit_patient_health_record_path %>
 </div>
