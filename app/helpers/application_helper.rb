@@ -8,4 +8,9 @@ module ApplicationHelper
       link_to 'Log In', login_path
     end
   end
+
+  def show_patient_links
+    link_to_unless_current('My Health Record',
+      patient_health_record_path(current_patient.id))
+  end
 end
