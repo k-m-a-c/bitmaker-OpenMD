@@ -10,8 +10,6 @@ class HealthStatusUpdatesController < ApplicationController
 
   def new
     @healthstatusupdate = HealthStatusUpdate.new
-    # @patient = Patient.first
-    #Replace this with current_patient/sessions
   end
 
   def edit
