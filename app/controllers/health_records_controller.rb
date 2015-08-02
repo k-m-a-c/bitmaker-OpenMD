@@ -1,7 +1,6 @@
 class HealthRecordsController < ApplicationController
   before_filter :authenticate_patient!
 
-
   def index
     @health_records = HealthRecord.all
   end
@@ -15,18 +14,20 @@ class HealthRecordsController < ApplicationController
 
   end
 
-  def edit
-    @health_record = HealthRecord.find_by(:patient => current_patient.id)
-  end
-
   def create
     @health_record = HealthRecord.new(health_record_params)
+    @health_record.patient = current_patient
 
     if @health_record.save
+      binding.pry
       redirect_to patient_health_record_url
     else
       render :new
     end
+  end
+
+  def edit
+    @health_record = HealthRecord.find_by(:patient => current_patient.id)
   end
 
   def update

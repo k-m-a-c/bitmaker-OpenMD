@@ -1,8 +1,7 @@
-<h2>Sign Up for OpenMD</h2>
+<h1>Sign Up for OpenMD</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
 
   <div class="field">
     <%= f.label :first_name %>
@@ -33,7 +32,6 @@
     <%= f.label :gender %>
     <%= f.text_field :gender %>
   </div>
-
 
   <div class="field">
     <%= f.label :date_of_birth %>

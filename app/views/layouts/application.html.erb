@@ -11,17 +11,9 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= link_to 'Home', root_path %>
+<%= link_to 'Home', patient_signed_in? ? patients_path : root_path %>
 
-<% if patient_signed_in? %>
-  <%= link_to 'My Health Record', patient_health_record_path(current_patient) %>
-  <%= link_to 'Log Out', destroy_patient_session_path, method: :delete %>
-<% elsif doctor_signed_in? %>
-  <%= link_to 'Log Out', destroy_doctor_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Log In', login_path %>
-<% end %>
-
+<%= show_session_links %>
 
 <%= yield %>
 

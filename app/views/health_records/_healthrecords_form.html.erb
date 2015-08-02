@@ -1,8 +1,8 @@
-<%= form_for(@health_record) do |f| %>
-
+<h3>Your medical history</h3>
+<%= form_for [@patient, @health_record], url: patient_health_record_path do |f| %>
   <div class="field">
     <%= f.label :allergies %><br />
-    <%= f.text_field :allergies %>
+    <%= f.text_area :allergies %>
   </div>
   <div class="field">
     <%= f.label :medications %><br />
@@ -10,13 +10,14 @@
   </div>
   <div class="field">
     <%= f.label :surgeries %><br />
-    <%= f.text_field :surgeries %>
+    <%= f.text_area :surgeries %>
   </div>
   <div class="field">
     <%= f.label :existing_conditions %><br />
-    <%= f.text_field :existing_conditions %>
+    <%= f.text_area :existing_conditions %>
   </div>
-  <div class="actions">
-    <%= f.submit "Create Health Record" %>
+
+  <div class="submit">
+    <%= f.submit "Create your health record" %>
   </div>
 <% end %>

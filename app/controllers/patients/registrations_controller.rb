@@ -52,7 +52,7 @@ before_filter :configure_sign_up_params, only: [:create]
   # end
 
   def after_sign_up_path_for(resource)
-    signed_in_root_path(resource)
+    new_patient_health_record_path(current_patient)
   end
 
   # The path used after sign up for inactive accounts.
