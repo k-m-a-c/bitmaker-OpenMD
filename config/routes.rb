@@ -19,6 +19,6 @@ Rails.application.routes.draw do
     resources :health_status_updates
   end
 
-  resources :doctors, only: [:index]
+  resources :doctor, only: [:index]
 
 end
