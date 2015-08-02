@@ -1,4 +1,5 @@
-<%= form_for(@health_status_update) do |f| %>
+<%= form_for [@patient, @health_status_update], url: patient_health_status_updates_path do |f| %>
+
   <div class="field">
     <%= f.label :respiratory_rate %><br />
     <%= f.number_field :respiratory_rate %>
@@ -25,7 +26,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Update Health Status" %>
+    <%= f.submit "Create a status update" %>
   </div>
 <% end %>
 

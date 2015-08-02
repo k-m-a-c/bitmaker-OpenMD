@@ -19,7 +19,6 @@ class HealthRecordsController < ApplicationController
     @health_record.patient = current_patient
 
     if @health_record.save
-      binding.pry
       redirect_to patient_health_record_url
     else
       render :new

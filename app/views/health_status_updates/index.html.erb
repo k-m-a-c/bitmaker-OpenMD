@@ -1,16 +1,14 @@
-<% @healthstatusupdates.each do |healthstatusupdate| %>
+<% @health_status_updates.each do |update| %>
 
-<p>Health Status Update: <%# patients.health_status_update_id %> </p>
-  <div class="healthstatusupdate">
-<!--     <strong><%# healthstatusupdate.patient.first_name %> <%# healthstatusupdate.patient.last_name %></strong> -->
+<p>Health Status Update: </p>
+  <div class="health-status-update">
     <ul>
-      <li><%= healthstatusupdate.respiratory_rate %></li>
-      <li><%= healthstatusupdate.heart_rate %></li>
-      <li><%= healthstatusupdate.body_temperature %></li>
-      <li><%= healthstatusupdate.blood_pressure %></li>
-      <li><%= healthstatusupdate.physical_health_score %></li>
-      <li><%= healthstatusupdate.mental_health_score %></li>
-      <li><%# healthstatusupdate.patient_id %></li>
+      <li><%= update.respiratory_rate %></li>
+      <li><%= update.heart_rate %></li>
+      <li><%= update.body_temperature %></li>
+      <li><%= update.blood_pressure %></li>
+      <li><%= update.physical_health_score %></li>
+      <li><%= update.mental_health_score %></li>
     </ul>
   </div>
 <% end %>
