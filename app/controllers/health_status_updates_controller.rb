@@ -2,7 +2,7 @@ class HealthStatusUpdatesController < ApplicationController
   before_filter :authenticate_patient!
 
   def index
-    @health_status_updates = current_patient.health_status_updates
+    @health_status_updates = current_patient.health_status_updates.order('created_at DESC')
   end
 
   def show
@@ -15,9 +15,6 @@ class HealthStatusUpdatesController < ApplicationController
     @health_status_update = HealthStatusUpdate.new
   end
 
-  def edit
-  end
-
   def create
     @health_status_update = HealthStatusUpdate.new(health_status_update_params)
     @health_status_update.patient = current_patient
@@ -27,9 +24,6 @@ class HealthStatusUpdatesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
   end
 
   private

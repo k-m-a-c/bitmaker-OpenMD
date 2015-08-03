@@ -1,7 +1,7 @@
+<h2>Health Status Updates</h2>
 <% @health_status_updates.each do |update| %>
-
-<p>Health Status Update: </p>
   <div class="health-status-update">
+    <p><strong>Created:</strong> about <%= time_ago_in_words(update.created_at) %> ago.</p>
     <ul>
       <li><%= update.respiratory_rate %></li>
       <li><%= update.heart_rate %></li>
