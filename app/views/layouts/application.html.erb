@@ -14,19 +14,14 @@
 <div class="nav-links">
   <ul id="nav-menu">
     <li>
-      <%= link_to 'Home', patient_signed_in? ? patients_path : root_path %>
+      <%= show_home_link %>
     </li>
-
-    <% if current_patient %>
-      <li>
-        <%= link_to_unless_current('My Health Record',
-        patient_health_record_path(current_patient.id)) %>
-      </li>
-      <li>
-        <%= link_to_unless_current('+ Health Status Update',
-        new_patient_health_status_update_path(current_patient.id)) %>
-      </li>
-    <% end %>
+    <li>
+      <%= show_health_record_link %>
+    </li>
+    <li>
+      <%= show_health_status_update_link %>
+    </li>
     <li>
       <%= show_session_links %>
     </li>
