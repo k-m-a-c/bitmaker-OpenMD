@@ -17,7 +17,7 @@ class Doctor::ParameterSanitizer < Devise::ParameterSanitizer
     )
   end
 
-  def update
+  def account_update
     default_params.permit(
       :first_name,
       :last_name,
@@ -29,6 +29,7 @@ class Doctor::ParameterSanitizer < Devise::ParameterSanitizer
       :institution,
       :city,
       :country,
+      :current_password,
       :password,
       :password_confirmation
     )
