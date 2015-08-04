@@ -2,16 +2,7 @@
 
   <div class="doctor">
     <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
-    <ul>
-      <li><%= doctor.email %></li>
-      <li><%= doctor.phone_number %></li>
-      <li><%= doctor.doctor_uid %></li>
-      <li><%= doctor.gender %></li>
-      <li><%= doctor.specialization %></li>
-      <li><%= doctor.institution %></li>
-      <li><%= doctor.city %></li>
-      <li><%= doctor.country %></li>
-    </ul>
+    <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
   </div>
 
 <% end %>

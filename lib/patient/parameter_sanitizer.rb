@@ -16,4 +16,21 @@ class Patient::ParameterSanitizer < Devise::ParameterSanitizer
     )
   end
 
+  def account_update
+    default_params.permit(
+      :first_name,
+      :last_name,
+      :email,
+      :phone_number,
+      :healthcard_number,
+      :gender,
+      :date_of_birth,
+      :city,
+      :country,
+      :current_password,
+      :password,
+      :password_confirmation
+    )
+  end
+
 end

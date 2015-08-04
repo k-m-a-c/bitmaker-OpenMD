@@ -14,11 +14,11 @@ Rails.application.routes.draw do
     sessions: 'patients/sessions'
   }
 
-  resources :patients, only: [:index] do
+  resources :patients, only: [:index, :show] do
     resource :health_record
     resources :health_status_updates
   end
 
-resources :doctors, only: [:index]
+resources :doctors, only: [:index, :show]
 
 end

@@ -1,12 +1,12 @@
 module ApplicationHelper
 
-  def show_session_links
+  def show_home_link
     if patient_signed_in?
-      link_to 'Log Out', destroy_patient_session_path, method: :delete
+      link_to 'Home', patients_path
     elsif doctor_signed_in?
-      link_to 'Log Out', destroy_doctor_session_path, method: :delete
+      link_to 'Home', doctors_path
     else
-      link_to 'Log In', login_path
+      link_to 'Home', root_path
     end
   end
 
@@ -26,13 +26,22 @@ module ApplicationHelper
     end
   end
 
-  def show_home_link
+  def show_account_link
     if patient_signed_in?
-      link_to 'Home', patients_path
+      link_to_unless_current('Account', patient_path(current_patient.id))
     elsif doctor_signed_in?
-      link_to 'Home', doctors_path
+      link_to_unless_current('Account', doctor_path(current_doctor.id))
     else
-      link_to 'Home', root_path
+    end
+  end
+
+  def show_session_links
+    if patient_signed_in?
+      link_to 'Log Out', destroy_patient_session_path, method: :delete
+    elsif doctor_signed_in?
+      link_to 'Log Out', destroy_doctor_session_path, method: :delete
+    else
+      link_to 'Log In', login_path
     end
   end
 

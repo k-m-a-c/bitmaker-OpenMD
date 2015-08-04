@@ -1,0 +1,12 @@
+<h1><%= @doctor.first_name %> <%= @doctor.last_name %></h1>
+  <ul>
+    <li><%= @doctor.email %></li>
+    <li><%= @doctor.phone_number %></li>
+    <li><%= @doctor.gender %></li>
+    <li><%= @doctor.specialization %></li>
+    <li><%= @doctor.institution %></li>
+    <li><%= @doctor.city %></li>
+    <li><%= @doctor.country %></li>
+  </ul>
+
+<p><%= link_to 'Edit my account', edit_doctor_path(@doctor) %></p>

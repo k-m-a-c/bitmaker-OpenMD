@@ -7,20 +7,25 @@ class HealthRecordsController < ApplicationController
 
   def show
     @health_record = HealthRecord.find_by(:patient => current_patient.id)
+
+    if @health_record.present? == false
+      redirect_to new_patient_health_record_url
+    end
   end
 
   def new
     @health_record = HealthRecord.new
-
   end
 
   def create
     @health_record = HealthRecord.new(health_record_params)
     @health_record.patient = current_patient
+    current_patient.health_record = @health_record
 
-    if @health_record.save
+    if @health_record.save && current_patient.save
       redirect_to patient_health_record_url
     else
+
       render :new
     end
   end

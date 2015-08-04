@@ -1,0 +1,13 @@
+<h1><%= @patient.first_name %> <%= @patient.last_name %></h1>
+
+<ul>
+  <li><%= @patient.email %></li>
+  <li><%= @patient.phone_number %></li>
+  <li><%= @patient.healthcard_number %></li>
+  <li><%= @patient.gender %></li>
+  <li><%= @patient.date_of_birth %></li>
+  <li><%= @patient.city %></li>
+  <li><%= @patient.country %></li>
+</ul>
+
+<p><%= link_to 'Edit my account', edit_patient_registration_path(@patient) %></p>
