@@ -5,10 +5,14 @@ class Patient < ActiveRecord::Base
 
   has_one :health_record
   has_many :health_status_updates
-  has_and_belongs_to_many :doctors
 
   accepts_nested_attributes_for :health_record
   accepts_nested_attributes_for :health_status_updates
+
+  has_many :accepted_relationships, -> { Relationship.accepted }, class_name: 'Relationship'
+  has_many :pending_relationships, -> { Relationship.pending }, class_name: 'Relationship'
+  has_many :doctors, :through => :accepted_relationships, dependent: :destroy
+  has_many :potential_doctors, :through => :pending_relationships, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
