@@ -27,4 +27,8 @@ class RelationshipsController < ApplicationController
     end
   end
 
+  private
+  def relationship_params
+    params.require(:relationship).permit(:patient_id, :doctor_id, :inviter, :status)
+  end
 end
