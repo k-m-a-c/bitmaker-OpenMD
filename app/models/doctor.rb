@@ -6,10 +6,11 @@ class Doctor < ActiveRecord::Base
   has_one :health_record, through: :patient
   has_many :health_status_updates, through: :patients
 
-  has_many :accepted_relationships, -> { Relationship.accepted }, class_name: 'Relationship'
-  has_many :pending_relationships, -> { Relationship.pending }, class_name: 'Relationship'
-  has_many :patients, :through => :accepted_relationships, dependent: :destroy
-  has_many :potential_patients, :through => :pending_relationships, dependent: :destroy
+  has_many :relationships, dependent: :destroy
+  has_many :patients,
+    -> { where accepted: true },
+    :through => :relationships,
+    dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

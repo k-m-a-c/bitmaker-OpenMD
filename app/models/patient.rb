@@ -9,10 +9,11 @@ class Patient < ActiveRecord::Base
   accepts_nested_attributes_for :health_record
   accepts_nested_attributes_for :health_status_updates
 
-  has_many :accepted_relationships, -> { Relationship.accepted }, class_name: 'Relationship'
-  has_many :pending_relationships, -> { Relationship.pending }, class_name: 'Relationship'
-  has_many :doctors, :through => :accepted_relationships, dependent: :destroy
-  has_many :potential_doctors, :through => :pending_relationships, dependent: :destroy
+  has_many :relationships, dependent: :destroy
+  has_many :doctors,
+    -> { where accepted: true },
+    :through => :relationships,
+    dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -24,7 +25,7 @@ class Patient < ActiveRecord::Base
 
   validate :date_of_birth_is_in_the_past?
 
-
+  # custom validations
   def date_of_birth_is_in_the_past?
     if date_of_birth.present? && date_of_birth > Date.tomorrow
       errors.add(:date_of_birth, "your date of birth must be in the past")

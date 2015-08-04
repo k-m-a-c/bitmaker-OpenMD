@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804184504) do
+ActiveRecord::Schema.define(version: 20150804204904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,11 +112,10 @@ ActiveRecord::Schema.define(version: 20150804184504) do
   create_table "relationships", force: :cascade do |t|
     t.integer  "doctor_id",  null: false
     t.integer  "patient_id", null: false
-    t.text     "inviter",    null: false
-    t.text     "invitee",    null: false
-    t.text     "status",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "inviter",    null: false
+    t.string   "status",     null: false
   end
 
   add_index "relationships", ["doctor_id", "patient_id"], name: "index_relationships_on_doctor_id_and_patient_id", unique: true, using: :btree
