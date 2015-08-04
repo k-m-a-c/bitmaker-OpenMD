@@ -11,7 +11,7 @@ class Patient < ActiveRecord::Base
   accepts_nested_attributes_for :health_status_updates
 
   validates :first_name, presence: true
-  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :phone_number, presence: true, numericality: true
   validates :healthcard_number, presence: true
   validates :gender, presence: true
