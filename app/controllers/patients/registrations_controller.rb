@@ -55,6 +55,10 @@ before_filter :configure_account_update_params, only: [:update]
     new_patient_health_record_path(current_patient)
   end
 
+  def after_update_path_for(resource)
+    patient_path(current_patient)
+  end
+
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
