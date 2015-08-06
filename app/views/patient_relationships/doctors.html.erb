@@ -1,0 +1,11 @@
+<h3>Your Doctors</h3>
+<% current_patient.doctors.each do |doctor| %>
+  <p><%= doctor.first_name %> <%= doctor.last_name %></p>
+<% end %>
+
+<h3>Pending Connection Requests</h3>
+<% current_patient.relationships.pending.each do |c| %>
+  <p>
+  <%= c.doctor.first_name %> <%= c.doctor.last_name %>
+  </p>
+<% end %>

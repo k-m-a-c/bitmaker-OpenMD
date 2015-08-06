@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 <div class="nav-links">
   <ul id="nav-menu">
@@ -23,6 +21,9 @@
       <%= show_health_status_update_link %>
     </li>
     <li>
+      <%= show_connections_link %>
+    </li>
+    <li>
       <%= show_account_link %>
     </li>
     <li>
@@ -30,6 +31,8 @@
     </li>
   </ul>
 </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

@@ -26,6 +26,13 @@ module ApplicationHelper
     end
   end
 
+  def show_connections_link
+    if patient_signed_in?
+      link_to_unless_current('Your Doctors',
+        patient_doctors_path(current_patient))
+    end
+  end
+
   def show_account_link
     if patient_signed_in?
       link_to_unless_current('Account', patient_path(current_patient.id))

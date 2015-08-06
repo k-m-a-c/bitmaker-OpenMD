@@ -1,8 +1,16 @@
-<% @doctors.each do |doctor| %>
+<% @patients.each do |patient| %>
 
-  <div class="doctor">
-    <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
-    <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
+  <div class="patient">
+    <strong><%= patient.first_name %> <%= patient.last_name %></strong>
+    <ul>
+      <li><%= patient.email %></li>
+      <li><%= patient.phone_number %></li>
+      <li><%= patient.healthcard_number %></li>
+      <li><%= patient.gender %></li>
+      <li><%= patient.date_of_birth %></li>
+      <li><%= patient.city %></li>
+      <li><%= patient.country %></li>
+    </ul>
   </div>
 
 <% end %>

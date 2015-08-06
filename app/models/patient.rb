@@ -11,7 +11,7 @@ class Patient < ActiveRecord::Base
 
   has_many :relationships, dependent: :destroy
   has_many :doctors,
-    -> { where accepted: true },
+    -> { where(relationships: {status: 'accepted'})},
     :through => :relationships,
     dependent: :destroy
 

@@ -4,10 +4,10 @@ class Relationship < ActiveRecord::Base
 
   validates :doctor_id, presence: true
   validates :patient_id, presence: true
+  validates :status, presence: true
+  validates :inviter, presence: true
 
   scope :accepted, -> { where(status: :accepted) }
   scope :pending, -> { where(status: :pending) }
   scope :rejected, -> { where(status: :rejected) }
-
-
 end
