@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/patients/:patient_id/doctors', to: 'patient_relationships#doctors',
     as: 'patient_doctors'
 
-  delete '/patients/:patient_id/', to: 'patient_relationships#delete'
+  delete '/patients/:patient_id/connection_request/:id',
+    to: 'patient_relationships#delete', as: 'delete_patient_connection'
 
 end

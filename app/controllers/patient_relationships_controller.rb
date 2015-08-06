@@ -54,11 +54,16 @@ class PatientRelationshipsController < ApplicationController
   def delete
     @relationship = Relationship.find(params[:id])
     @relationship.destroy
+    if patient_doctors_path
+      flash[:notice] = "Connection request cancelled."
+    else
+      flash[:notice] = "Doctor removed."
+    end
     redirect_to patient_doctors_url
   end
 
   private
   def relationship_params
-    params.require(:relationship).permit(:doctor_id)
+    params.require(:relationship).permit(:doctor_id, :relationship_id)
   end
 end
