@@ -28,7 +28,8 @@ class DoctorRelationshipsController < ApplicationController
   end
 
   def pending
-    @pending = current_doctor.relationships.where("status = ?", 'pending')
+    @your_requests = current_doctor.relationships.where("status = ?", 'pending' && "inviter =?", 'doctor')
+    @patient_requests = current_doctor.relationships.where("status = ?", 'pending' && "inviter =?", 'patient')
   end
 
   def accept

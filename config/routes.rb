@@ -67,14 +67,14 @@ Rails.application.routes.draw do
 
   # PATCH Reject
   patch '/doctors/:doctor_id/connection_request/:id',
-    to: 'doctor_relationships#reject'
+    to: 'doctor_relationships#reject', as: 'reject_doctor_connection_request'
 
   # GET Pending
   get '/doctors/:doctor_id/pending_connections',
   to: 'doctor_relationships#pending', as: 'doctor_pending_connections'
 
   # GET Patients
-  get '/doctors/:doctor_id/doctors', to: 'doctor_relationships#doctors',
+  get '/doctors/:doctor_id/patients', to: 'doctor_relationships#patients',
     as: 'doctor_patients'
 
   # DELETE Connection

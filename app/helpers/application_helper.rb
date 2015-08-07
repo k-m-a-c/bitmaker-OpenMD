@@ -30,6 +30,9 @@ module ApplicationHelper
     if patient_signed_in?
       link_to_unless_current('Your Doctors',
         patient_doctors_path(current_patient))
+    elsif doctor_signed_in?
+      link_to_unless_current('Your Patients',
+        doctor_patients_path(current_doctor))
     end
   end
 
