@@ -10,7 +10,7 @@
       <li><%= patient.date_of_birth %></li>
       <li><%= patient.city %></li>
       <li><%= patient.country %></li>
-      <li><%= link_to "Send connection request", doctor_connection_request_path(:doctor_id => current_doctor.id, :patient_id => patient.id), :method => :post %></li>
+      <li><%= show_doctor_connection_link(patient) %></li>
     </ul>
   </div>
 

@@ -4,7 +4,7 @@
   <div class="doctor">
     <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
     <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
-    <p><%= show_connection_link(doctor) %></p>
+    <p><%= show_patient_connection_link(doctor) %></p>
   </div>
 
 <% end %>

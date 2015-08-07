@@ -1,5 +1,6 @@
 class DoctorsController < ApplicationController
   before_filter :authenticate_doctor!
+  include DoctorsHelper
 
   def index
     @doctors = Doctor.all
