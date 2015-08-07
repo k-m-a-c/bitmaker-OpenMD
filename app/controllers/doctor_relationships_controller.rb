@@ -10,7 +10,6 @@ class DoctorRelationshipsController < ApplicationController
   end
 
   def create
-    binding.pry
     @relationship = current_doctor.relationships.build(
       :patient_id => params[:patient_id],
       status: 'pending',

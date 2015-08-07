@@ -1,9 +1,10 @@
+
 <% @doctors.each do |doctor| %>
 
   <div class="doctor">
     <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
     <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
-    <p><%= link_to "Send connection request", patient_connection_request_path(:patient_id => current_patient.id, :doctor_id => doctor.id), :method => :post %></p>
+    <p><%= show_connection_link(doctor) %></p>
   </div>
 
 <% end %>
