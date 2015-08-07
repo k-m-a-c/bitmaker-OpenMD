@@ -1,0 +1,11 @@
+<h3>Your Patients</h3>
+<% current_doctor.patients.each do |patient| %>
+  <p><%= patient.first_name %> <%= patient.last_name %></p>
+  <p><%= link_to 'See Profile', patient_path(patient) %></p>
+<% end %>
+
+<h3>Pending Connection Requests</h3>
+<% current_patient.relationships.pending.each do |c| %>
+  <p><%= c.patient.first_name %> <%= c.patient.last_name %></p>
+  <p><%= link_to 'Cancel Connection Request', delete_doctor_connection_path(:id => c.id), :method => :delete %></p>
+<% end %>

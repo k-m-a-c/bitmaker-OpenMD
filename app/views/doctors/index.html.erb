@@ -1,16 +1,1 @@
-<% @patients.each do |patient| %>
-
-  <div class="patient">
-    <strong><%= patient.first_name %> <%= patient.last_name %></strong>
-    <ul>
-      <li><%= patient.email %></li>
-      <li><%= patient.phone_number %></li>
-      <li><%= patient.healthcard_number %></li>
-      <li><%= patient.gender %></li>
-      <li><%= patient.date_of_birth %></li>
-      <li><%= patient.city %></li>
-      <li><%= patient.country %></li>
-    </ul>
-  </div>
-
-<% end %>
+<%= render 'patients_list' %>
