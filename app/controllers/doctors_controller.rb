@@ -1,6 +1,5 @@
 class DoctorsController < ApplicationController
   before_filter :authenticate_doctor!
-  include DoctorsHelper
 
   def index
     @doctors = Doctor.all
@@ -9,6 +8,10 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
+  end
+
+  def patient
+    @patient = current_doctor.patients.find(params[:patient_id])
   end
 
   def edit
@@ -25,10 +28,5 @@ class DoctorsController < ApplicationController
       render :edit
     end
   end
-
-private
-def doctor_params
-
-end
 
 end

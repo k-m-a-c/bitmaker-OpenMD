@@ -36,7 +36,7 @@ class DoctorRelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     @relationship.status = 'accepted'
     if @relationship.save
-      redirect_to relationships_url
+      redirect_to doctor_patients_url
     else
       render :pending
     end
@@ -46,7 +46,7 @@ class DoctorRelationshipsController < ApplicationController
     @relationship = Relationship.find(params[:id])
     @relationship.status = 'rejected'
     if @relationship.save
-      redirect_to relationships_url
+      redirect_to doctor_patients_url
     else
       render :index
     end
