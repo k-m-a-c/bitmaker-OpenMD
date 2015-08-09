@@ -41,16 +41,6 @@ class PatientRelationshipsController < ApplicationController
     end
   end
 
-  def reject
-    @relationship = Relationship.find(params[:id])
-    @relationship.status = 'rejected'
-    if @relationship.save
-      redirect_to relationships_url
-    else
-      render :index
-    end
-  end
-
   def delete
     @relationship = Relationship.find(params[:id])
     @relationship.destroy

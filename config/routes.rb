@@ -38,10 +38,6 @@ Rails.application.routes.draw do
   patch '/patients/:patient_id/doctor_request/:id/accept',
     to: 'patient_relationships#accept'
 
-  # PATCH Reject
-  patch '/patients/:patient_id/doctor_request/:id/reject',
-    to: 'patient_relationships#reject'
-
   # GET Pending
   get '/patients/:patient_id/pending_doctor_requests',
   to: 'patient_relationships#pending', as: 'patient_pending_connections'
@@ -67,10 +63,6 @@ Rails.application.routes.draw do
   # PATCH Accept
   patch '/doctors/:doctor_id/patient_request/:id/accept',
     to: 'doctor_relationships#accept'
-
-  # PATCH Reject
-  patch '/doctors/:doctor_id/patient_request/:id/reject',
-    to: 'doctor_relationships#reject', as: 'reject_doctor_connection_request'
 
   # GET Pending
   get '/doctors/:doctor_id/pending_patient_requests',

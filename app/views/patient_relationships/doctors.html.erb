@@ -5,14 +5,14 @@
 <% end %>
 
 <h3>Your Connection Requests to Doctors</h3>
-<% current_patient.relationships.pending.each do |c| %>
+<% current_patient.relationships.requests('pending', 'patient').each do |c| %>
   <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
   <p><%= link_to 'Cancel Connection Request', delete_patient_connection_path(:id => c.id), :method => :delete %></p>
 <% end %>
 
 <h3>Doctor Connection Requests to You</h3>
-<% current_patient.relationships.doctor_to_patient_requests.each do |c| %>
+<% current_patient.relationships.requests('pending', 'doctor').each do |c| %>
   <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
   <p><%= link_to 'Decline Connection Request',
-    reject_patient_connection_request_path(:id => c.id), :method => :patch %></p>
+    delete_patient_connection_path(:id => c.id), :method => :delete %></p>
 <% end %>
