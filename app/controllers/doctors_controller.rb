@@ -14,19 +14,4 @@ class DoctorsController < ApplicationController
     @patient = current_doctor.patients.find(params[:patient_id])
   end
 
-  def edit
-    @doctor = Doctor.find_by(:doctor => current_doctor.id)
-  end
-
-  def update
-    @doctor = Doctor.find_by(:doctor => current_doctor.id)
-    @doctor.update_attributes(doctor_params)
-
-    if @doctor.save
-      redirect_to doctor_url
-    else
-      render :edit
-    end
-  end
-
 end

@@ -29,6 +29,10 @@ gem 'figaro'
 # Styling
 gem 'bourbon'
 
+group :test do
+  gem 'shoulda'
+end
+
 group :development, :test do
   gem 'pry-rails'
   gem 'rake'
