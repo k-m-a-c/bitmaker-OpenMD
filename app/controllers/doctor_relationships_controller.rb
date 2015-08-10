@@ -1,8 +1,9 @@
 class DoctorRelationshipsController < ApplicationController
   before_filter :authenticate_doctor!
-  around_action :is_patient_doctor?, only: :patient
+  around_action :is_patients_doctor?, only: :patient
 
   def patient
+    binding.pry
     @patient = current_doctor.patients.find(params[:id])
   end
 
@@ -63,12 +64,14 @@ class DoctorRelationshipsController < ApplicationController
     params.require(:relationship).permit(:patient_id, :relationship_id)
   end
 
-  def is_patient_doctor?
+  def is_patients_doctor?
     @doctor = Doctor.find(current_doctor.id)
     @patient = Patient.find(params[:id])
 
     if @patient.doctors.include?(@doctor)
       render params[:action].to_sym
+    else
+      render file: 'public/401.html', status: :unauthorized, layout: false
     end
   end
 end
