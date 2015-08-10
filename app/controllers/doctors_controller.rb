@@ -10,8 +10,4 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   end
 
-  def patient
-    @patient = current_doctor.patients.find(params[:patient_id])
-  end
-
 end

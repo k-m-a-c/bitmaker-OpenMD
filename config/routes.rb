@@ -21,8 +21,6 @@ Rails.application.routes.draw do
 
   resources :doctors, only: [:index, :show]
 
-  get '/doctors/:patient_id',
-    to: 'doctors#patient', as: 'show_specific_patient_path'
 
   # Patient 'Friending' Routes
 
@@ -67,6 +65,10 @@ Rails.application.routes.draw do
   # GET Pending
   get '/doctors/:doctor_id/pending_patient_requests',
   to: 'doctor_relationships#pending', as: 'doctor_pending_connections'
+
+  # GET a Specific Patient
+  get 'doctors/patient/:id',
+    to: 'doctor_relationships#patient', as: 'doctor_patient'
 
   # GET Patients
   get '/doctors/:doctor_id/patients', to: 'doctor_relationships#patients',
