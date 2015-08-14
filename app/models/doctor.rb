@@ -20,12 +20,21 @@ class Doctor < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :phone_number, presence: true, numericality: true
   validates :doctor_uid, presence: true, numericality: true
   validates :gender, presence: true
   validates :specialization, presence: true
   validates :institution, presence: true
   validates :city, presence: true
   validates :country, presence: true
+
+  validate :phone_number_is_nil_or_integer
+
+private
+  def phone_number_is_nil_or_integer
+    n = phone_number
+    unless n.is_a?(Integer) || n.is_a?(NilClass)
+      errors.add(:phone_number, "Must be empty or a number")
+    end
+  end
 
 end
