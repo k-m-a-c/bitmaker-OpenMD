@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804204904) do
+ActiveRecord::Schema.define(version: 20150813195709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20150804204904) do
     t.string   "first_name",                                    null: false
     t.string   "last_name",                                     null: false
     t.string   "email",                                         null: false
-    t.integer  "phone_number",           limit: 8,              null: false
     t.integer  "doctor_uid",             limit: 8,              null: false
     t.string   "gender"
     t.string   "specialization"
@@ -42,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150804204904) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "phone_number",           limit: 8
   end
 
   add_index "doctors", ["doctor_uid"], name: "index_doctors_on_doctor_uid", using: :btree

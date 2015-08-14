@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Devise
+# Use Devise for authentication
 gem 'devise'
 
 # Use Puma as the app server
@@ -25,6 +25,9 @@ gem 'rails_12factor'
 
 # Use Figaro for ENV management
 gem 'figaro'
+
+# Use Wombat for automated interaction with target sites
+gem 'wombat'
 
 # Styling
 gem 'bourbon'
