@@ -40,12 +40,11 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bourbon (4.2.3)
-      sass (~> 3.4)
-      thor
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
+    celluloid (0.16.1)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -55,6 +54,7 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    connection_pool (2.2.0)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -72,6 +72,7 @@ GEM
       thor (~> 0.14)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -103,7 +104,6 @@ GEM
     multi_json (1.11.2)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
-    netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     ntlm-http (0.1.1)
@@ -150,12 +150,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rest-client (1.8.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
     rspec-core (3.3.2)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.1)
@@ -189,6 +188,12 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    sidekiq (3.4.2)
+      celluloid (~> 0.16.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      json (~> 1.0)
+      redis (~> 3.2, >= 3.2.1)
+      redis-namespace (~> 1.5, >= 1.5.2)
     slop (3.6.0)
     spring (1.3.6)
     sprockets (3.2.0)
@@ -200,6 +205,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -218,22 +225,18 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     webrobots (0.1.1)
-    wombat (2.4.0)
-      activesupport
-      mechanize
-      rest-client
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon
   byebug
   coffee-rails (~> 4.1.0)
   devise
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  mechanize
   pg (~> 0.18.2)
   pry-rails
   puma
@@ -244,8 +247,8 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda
+  sidekiq
   spring
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  wombat

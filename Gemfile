@@ -26,11 +26,11 @@ gem 'rails_12factor'
 # Use Figaro for ENV management
 gem 'figaro'
 
-# Use Wombat for automated interaction with target sites
-gem 'wombat'
+# Use Mechanize for automated interaction with target sites
+gem 'mechanize'
 
-# Styling
-gem 'bourbon'
+# Use Sidekiq for delayed job processing
+gem 'sidekiq'
 
 group :test do
   gem 'shoulda'
