@@ -1,10 +1,11 @@
 namespace :doctor do
   desc "get doctor office phone # and add insert into db"
-  task :get_phone_number => [:environment] do
+  task :get_phone_number, [:doctor_id] => [:environment] do |t, args|
+
     require 'mechanize'
     require 'nokogiri'
 
-    doctor = Doctor.first
+    doctor = Doctor.find(args.doctor_id)
 
     # Format the URL to query
     cpso_number = doctor.doctor_uid.to_s

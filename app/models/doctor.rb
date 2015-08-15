@@ -29,12 +29,27 @@ class Doctor < ActiveRecord::Base
 
   validate :phone_number_is_nil_or_integer
 
-private
-  def phone_number_is_nil_or_integer
-    n = phone_number
-    unless n.is_a?(Integer) || n.is_a?(NilClass)
-      errors.add(:phone_number, "Must be empty or a number")
-    end
+
+  def get_phone_number
+    binding.pry
+    GetDoctorPhoneNumberWorker.perform_async(self.id)
   end
 
+  def get_phone_number!
+    run_rake_task(self.id)
+  end
+
+  private
+    def run_rake_task(doctor_id)
+      require 'rake'
+      Rails.application.load_tasks
+      Rake::Task['doctor:get_phone_number'].invoke(doctor_id)
+    end
+
+    def phone_number_is_nil_or_integer
+      n = phone_number
+      unless n.is_a?(Integer) || n.is_a?(NilClass)
+        errors.add(:phone_number, "Must be empty or a number")
+      end
+    end
 end
