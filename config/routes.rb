@@ -14,13 +14,19 @@ Rails.application.routes.draw do
     sessions: 'patients/sessions'
   }
 
+  # Doctor Verification Routes
+  get 'doctors/verify', to: 'doctors#show_verify', as: 'verify'
+  post 'doctors/verify'
+  post 'doctors/resend'
+
+  # Patient Routes
   resources :patients, only: [:index, :show] do
     resource :health_record
     resources :health_status_updates
   end
 
+  # Doctor Routes
   resources :doctors, only: [:index, :show]
-
 
   # Patient 'Friending' Routes
 
