@@ -22,6 +22,7 @@ class Doctor < ActiveRecord::Base
   validates :last_name, presence: true
   validates :doctor_uid, presence: true, numericality: true
   validates :gender, presence: true
+  validates :phone_number, numericality: true, allow_nil: true
   validates :specialization, presence: true
   validates :institution, presence: true
   validates :city, presence: true
@@ -43,12 +44,5 @@ class Doctor < ActiveRecord::Base
       require 'rake'
       Rails.application.load_tasks
       Rake::Task['doctor:get_phone_number'].invoke(doctor_id)
-    end
-
-    def phone_number_is_nil_or_integer
-      n = phone_number
-      unless n.is_a?(Integer) || n.is_a?(NilClass)
-        errors.add(:phone_number, "Must be empty or a number")
-      end
     end
 end
