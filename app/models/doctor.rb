@@ -31,7 +31,6 @@ class Doctor < ActiveRecord::Base
 
 
   def get_phone_number
-    binding.pry
     GetDoctorPhoneNumberWorker.perform_async(self.id)
   end
 

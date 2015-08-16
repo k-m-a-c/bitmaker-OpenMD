@@ -9,7 +9,11 @@ before_filter :configure_account_update_params, only: [:update]
 
   # POST /resource
   def create
-    super
+    super do
+      if resource.save
+        resource.get_phone_number
+      end
+    end
   end
 
   # GET /resource/edit

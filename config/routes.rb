@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
   root 'welcome#index'
@@ -83,5 +85,8 @@ Rails.application.routes.draw do
   # DELETE Connection
   delete '/doctors/:doctor_id/patients/:id',
     to: 'doctor_relationships#delete', as: 'delete_doctor_connection'
+
+  # Web interface for monitoring sidekiq
+  mount Sidekiq::Web, at: '/sidekiq'
 
 end
