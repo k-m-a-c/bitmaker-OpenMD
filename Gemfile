@@ -32,8 +32,14 @@ gem 'mechanize'
 # Use Sidekiq for delayed job processing
 gem 'sidekiq'
 
+# For Sidekiq web dashboard
 gem 'sinatra', require: false
 gem 'slim'
+
+# UI frameworks and tools
+gem 'autoprefixer-rails'
+gem 'bourbon'
+gem 'neat'
 
 group :test do
   gem 'shoulda'
