@@ -8,7 +8,7 @@
   $gradient-angle: 10deg;
   $hero-image: '/assets/background.jpg';
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
   background-color: #324766;
   background-position: top;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@
     @include outer-container;
     @include clearfix;
     margin: auto;
-    padding: 20%;
+    padding: 10%;
     text-align: center;
 
     .hero-copy {

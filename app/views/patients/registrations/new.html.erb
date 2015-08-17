@@ -1,67 +1,69 @@
-<h1>Sign Up for OpenMD</h1>
+<div class="main">
+  <h1>Sign Up as a Patient</h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true, placeholder: "Type in your first name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Type in your last name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, placeholder: "e.g. yourname@email.com" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.telephone_field :phone_number %>
-  </div>
+    <div class="field">
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number, placeholder: "e.g. 4165557788" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :healthcard_number %>
-    <%= f.text_field :healthcard_number %>
-  </div>
+    <div class="field">
+      <%= f.label :healthcard_number %>
+      <%= f.text_field :healthcard_number, placeholder: "e.g. 5584486674KM" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </div>
+    <div class="field">
+      <%= f.label :gender %>
+      <%= f.text_field :gender, placeholder: "Type in your gender" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :date_of_birth %>
-    <%= f.date_field :date_of_birth %>
-  </div>
+    <div class="field">
+      <%= f.label :date_of_birth %>
+      <%= f.date_field :date_of_birth %>
+    </div>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
+    <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city, placeholder: "E.g. Thunder Bay" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-  </div>
+    <div class="field">
+      <%= f.label :country %>
+      <%= f.text_field :country, placeholder: "E.g. Canada" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", placeholder: "Tip: Use letters, numbers, and symbols" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Tip: Use letters, numbers, and symbols" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+</div>

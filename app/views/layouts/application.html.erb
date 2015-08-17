@@ -9,37 +9,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div id="home-link">
+      <%= show_home_link %>
+    </div>
+    <div id="nav-menu">
+      <ul>
+        <li>
+          <%= show_health_record_link %>
+        </li>
+        <li>
+          <%= show_health_status_update_link %>
+        </li>
+        <li>
+          <%= show_connections_link %>
+        </li>
+        <li>
+          <%= show_account_link %>
+        </li>
+        <li>
+          <%= show_session_links %>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-<header>
-  <div id="home-link">
-    <%= show_home_link %>
-  </div>
-  <div id="nav-menu">
-    <ul>
-      <li>
-        <%= show_health_record_link %>
-      </li>
-      <li>
-        <%= show_health_status_update_link %>
-      </li>
-      <li>
-        <%= show_connections_link %>
-      </li>
-      <li>
-        <%= show_account_link %>
-      </li>
-      <li>
-        <%= show_session_links %>
-      </li>
-    </ul>
-  </div>
-
-</header>
-<main>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
   <%= yield %>
-</main>
 </body>
 </html>
