@@ -11,26 +11,29 @@
 <body>
 
 <header>
-  <ul id="nav-menu">
-    <li>
-      <%= show_home_link %>
-    </li>
-    <li>
-      <%= show_health_record_link %>
-    </li>
-    <li>
-      <%= show_health_status_update_link %>
-    </li>
-    <li>
-      <%= show_connections_link %>
-    </li>
-    <li>
-      <%= show_account_link %>
-    </li>
-    <li>
-      <%= show_session_links %>
-    </li>
-  </ul>
+  <div id="home-link">
+    <%= show_home_link %>
+  </div>
+  <div id="nav-menu">
+    <ul>
+      <li>
+        <%= show_health_record_link %>
+      </li>
+      <li>
+        <%= show_health_status_update_link %>
+      </li>
+      <li>
+        <%= show_connections_link %>
+      </li>
+      <li>
+        <%= show_account_link %>
+      </li>
+      <li>
+        <%= show_session_links %>
+      </li>
+    </ul>
+  </div>
+
 </header>
 <main>
   <p class="notice"><%= notice %></p>
