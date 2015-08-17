@@ -2,11 +2,11 @@ module ApplicationHelper
 
   def show_home_link
     if patient_signed_in?
-      link_to 'Home', patients_path
+      link_to 'OpenMD', patients_path
     elsif doctor_signed_in?
-      link_to 'Home', doctors_path
+      link_to 'OpenMD', doctors_path
     else
-      link_to 'Home', root_path
+      link_to 'OpenMD', root_path
     end
   end
 
