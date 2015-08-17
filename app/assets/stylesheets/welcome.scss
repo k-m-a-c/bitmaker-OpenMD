@@ -8,17 +8,11 @@
   $gradient-angle: 10deg;
   $hero-image: '/assets/background.jpg';
 
-  background-color: #324766;
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 3em;
-
-  .hero-logo img {
-    height: 4em;
-    margin-bottom: 1em;
-  }
 
   .hero-inner {
     @include outer-container;
@@ -26,6 +20,12 @@
     margin: auto;
     padding: 15%;
     text-align: center;
+    position: relative;
+
+    .hero-logo img {
+      height: 4em;
+      margin-bottom: 1em;
+    }
 
     .hero-copy {
       text-align: center;
@@ -50,12 +50,22 @@
           max-width: 40%;
         }
       }
-
     }
 
     form.button_to {
       display: inline-block;
       margin: 0.5rem;
     }
+
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #324766;
+    opacity: 0.6;
   }
 }
