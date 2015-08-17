@@ -3,13 +3,13 @@
   $action-color: #477DCA !default;
   $large-screen: em(860) !default;
   $hero-background-top: #7F99BE;
-  $hero-background-bottom: #20392B;
+  $hero-background-bottom: #000;
   $hero-color: white;
   $gradient-angle: 10deg;
   $hero-image: '/assets/background.jpg';
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
   background-color: #324766;
+  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;

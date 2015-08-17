@@ -1,7 +1,8 @@
-<h1>Log In to OpenMD</h1>
+<div class="main">
+  <h1>Log In to OpenMD</h1>
+  <div class="sign-up-buttons">
+    <%= button_to 'Log in as a Patient', new_patient_session_path, method: :get %>
 
-<h3>Patients</h3>
-<%= link_to 'Log in as a Patient', new_patient_session_path %>
-
-<h3>Doctors</h3>
-<%= link_to 'Log in as a Doctor', new_doctor_session_path %>
+    <%= button_to 'Log in as a Doctor', new_doctor_session_path, method: :get %>
+  </div>
+</div>
