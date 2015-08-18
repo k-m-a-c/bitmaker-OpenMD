@@ -1,9 +1,17 @@
 <% @doctors.each do |doctor| %>
 
-  <div class="doctor">
-    <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
-    <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
-    <p><%= show_patient_connection_link(doctor) %></p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-image">
+        <%= link_to image_tag("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), doctor_path(doctor) %>
+      </div>
+      <div class="card-header">
+        <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
+      </div>
+      <div class="card-copy">
+        <p><%= show_patient_connection_link(doctor) %></p>
+      </div>
+    </div>
   </div>
 
 <% end %>
