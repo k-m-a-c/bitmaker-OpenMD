@@ -31,6 +31,18 @@ class Patient < ActiveRecord::Base
 
   validate :date_of_birth_is_in_the_past?
 
+  def respiratory_rate
+    self.health_status_updates.map{|u|
+      { created_at: u.created_at, rate: u.respiratory_rate }
+    }
+  end
+
+  def heart_rate
+    self.health_status_updates.map{|u|
+      { created_at: u.created_at, rate: u.heart_rate }
+    }
+  end
+
   # custom validations
   def date_of_birth_is_in_the_past?
     if date_of_birth.present? && date_of_birth > Date.tomorrow

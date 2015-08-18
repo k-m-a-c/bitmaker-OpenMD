@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     resources :health_status_updates
   end
 
+  get '/patients/:patient_id/status', to: 'patients#status',
+    as: 'patient_status'
+
   # Doctor Routes
   resources :doctors, only: [:index, :show]
 
