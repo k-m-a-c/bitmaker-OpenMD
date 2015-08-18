@@ -26,6 +26,21 @@ class PatientsController < ApplicationController
       @body_temp_chart_data[u.created_at] = u.body_temperature
     end
 
+    @blood_pressure_chart_data = {}
+    @health_status_updates.each do |u|
+      @blood_pressure_chart_data[u.created_at] = u.blood_pressure
+    end
+
+    @physical_health_chart_data = {}
+    @health_status_updates.each do |u|
+      @physical_health_chart_data[u.created_at] = u.physical_health_score
+    end
+
+    @mental_health_chart_data = {}
+    @health_status_updates.each do |u|
+      @mental_health_chart_data[u.created_at] = u.mental_health_score
+    end
+
   end
 
   def show
