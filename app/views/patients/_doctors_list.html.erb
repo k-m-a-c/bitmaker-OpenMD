@@ -6,9 +6,14 @@
         <%= link_to image_tag("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), doctor_path(doctor) %>
       </div>
       <div class="card-header">
-        <strong><%= doctor.first_name %> <%= doctor.last_name %></strong>
+        <h3><%= doctor.first_name %> <%= doctor.last_name %></h3>
       </div>
       <div class="card-copy">
+        <p><strong>Specialization: </strong><%= doctor.specialization %></p>
+        <p><strong>Institution: </strong><%= doctor.institution %></p>
+        <p><strong>Gender: </strong><%= doctor.gender %></p>
+        <p><strong>City: </strong><%= doctor.city %></p>
+        <p><strong>Country: </strong><%= doctor.country %></p>
         <p><%= show_patient_connection_link(doctor) %></p>
       </div>
     </div>
