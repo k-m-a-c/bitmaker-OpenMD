@@ -1,29 +1,30 @@
-<div class="health-record">
-  <h1>Your Health Record</h1>
-  <p>
-    <strong>Allergies: </strong>
-    <%= @health_record.allergies %>
-  </p>
+<div class="main">
+  <div class="health-record">
+    <h1>Your Health Record</h1>
+    <p>
+      <strong>Allergies: </strong>
+      <%= @health_record.allergies %>
+    </p>
 
-  <p>
-    <strong>Medications: </strong>
-    <%= @health_record.medications %>
-  </p>
+    <p>
+      <strong>Medications: </strong>
+      <%= @health_record.medications %>
+    </p>
 
-  <p>
-    <strong>Surgeries: </strong>
-    <%= @health_record.surgeries %>
-  </p>
+    <p>
+      <strong>Surgeries: </strong>
+      <%= @health_record.surgeries %>
+    </p>
 
-  <p>
-    <strong>Existing Conditions: </strong>
-    <%= @health_record.existing_conditions %>
-  </p>
+    <p>
+      <strong>Existing Conditions: </strong>
+      <%= @health_record.existing_conditions %>
+    </p>
 
+    <p>
+      <strong>Edit your health record </strong>
+    </p>
 
-  <p>
-    <strong>Edit your health record </strong>
-  </p>
-
-  <%= link_to "Edit", edit_patient_health_record_path %>
+    <%= button_to "Edit", edit_patient_health_record_path, method: :get %>
+  </div>
 </div>

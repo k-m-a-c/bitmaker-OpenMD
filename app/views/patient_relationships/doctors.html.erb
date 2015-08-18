@@ -1,18 +1,20 @@
-<h3>Your Doctors</h3>
-<% current_patient.doctors.each do |doctor| %>
-  <p><%= doctor.first_name %> <%= doctor.last_name %></p>
-  <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
-<% end %>
+<div class="main">
+  <h3>Your Doctors</h3>
+  <% current_patient.doctors.each do |doctor| %>
+    <p><%= doctor.first_name %> <%= doctor.last_name %></p>
+    <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
+  <% end %>
 
-<h3>Your Connection Requests to Doctors</h3>
-<% current_patient.relationships.requests('pending', 'patient').each do |c| %>
-  <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
-  <p><%= link_to 'Cancel Connection Request', delete_patient_connection_path(:id => c.id), :method => :delete %></p>
-<% end %>
+  <h3>Your Connection Requests to Doctors</h3>
+  <% current_patient.relationships.requests('pending', 'patient').each do |c| %>
+    <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
+    <p><%= link_to 'Cancel Connection Request', delete_patient_connection_path(:id => c.id), :method => :delete %></p>
+  <% end %>
 
-<h3>Doctor Connection Requests to You</h3>
-<% current_patient.relationships.requests('pending', 'doctor').each do |c| %>
-  <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
-  <p><%= link_to 'Decline Connection Request',
-    delete_patient_connection_path(:id => c.id), :method => :delete %></p>
-<% end %>
+  <h3>Doctor Connection Requests to You</h3>
+  <% current_patient.relationships.requests('pending', 'doctor').each do |c| %>
+    <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
+    <p><%= link_to 'Decline Connection Request',
+      delete_patient_connection_path(:id => c.id), :method => :delete %></p>
+  <% end %>
+</div>
