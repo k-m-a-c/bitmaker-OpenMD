@@ -1,16 +1,23 @@
 <% @patients.each do |patient| %>
 
-  <div class="patient">
-    <strong><%= patient.first_name %> <%= patient.last_name %></strong>
-    <ul>
-      <li><%= patient.email %></li>
-      <li><%= patient.phone_number %></li>
-      <li><%= patient.healthcard_number %></li>
-      <li><%= patient.gender %></li>
-      <li><%= patient.date_of_birth %></li>
-      <li><%= patient.city %></li>
-      <li><%= patient.country %></li>
-      <li><%= show_doctor_connection_link(patient) %></li>
-    </ul>
+  <div class="cards">
+    <div class="card">
+      <div class="card-image">
+        <%= link_to image_tag("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), patient_path(patient) %>
+      </div>
+      <div class="card-header">
+        <h3><%= patient.first_name %> <%= patient.last_name %></h3>
+      </div>
+      <div class="card-copy">
+        <p><strong>Email: </strong><%= patient.email %></p>
+        <p><strong>Phone Number: </strong><%= patient.phone_number %></p>
+        <p><strong>Gender: </strong><%= patient.gender %></p>
+        <p><strong>Date of Birth: </strong><%= patient.date_of_birth %></p>
+        <p><strong>City: </strong><%= patient.city %></p>
+        <p><strong>Country: </strong><%= patient.country %></p>
+        <p><%= show_doctor_connection_link(patient) %></p>
+      </div>
+    </div>
   </div>
+
 <% end %>
