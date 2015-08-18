@@ -2,13 +2,13 @@
   <h1><%= @patient.first_name %> <%= @patient.last_name %></h1>
 
   <ul>
-    <li><%= @patient.email %></li>
-    <li><%= @patient.phone_number %></li>
-    <li><%= @patient.healthcard_number %></li>
-    <li><%= @patient.gender %></li>
-    <li><%= @patient.date_of_birth %></li>
-    <li><%= @patient.city %></li>
-    <li><%= @patient.country %></li>
+    <li><strong>Email: </strong><%= @patient.email %></li>
+    <li><strong>Phone Number: </strong><%= @patient.phone_number %></li>
+    <li><strong>Healthcard #: </strong><%= @patient.healthcard_number %></li>
+    <li><strong>Gender: </strong><%= @patient.gender %></li>
+    <li><strong>Date of Birth: </strong><%= @patient.date_of_birth %></li>
+    <li><strong>City: </strong><%= @patient.city %></li>
+    <li><strong>Country: </strong><%= @patient.country %></li>
   </ul>
 
   <p><%= button_to 'Edit my account', edit_patient_registration_path(@patient), method: :get %></p>

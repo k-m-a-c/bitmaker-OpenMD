@@ -1,23 +1,25 @@
-<h1><%= @patient.first_name %> <%= @patient.last_name %></h1>
+<div class="main">
+  <h1><%= @patient.first_name %> <%= @patient.last_name %></h1>
 
-<h3>Patient Health Record</h3>
-  <div class="health-record">
-    <p><strong>Allergies: </strong> <%= @patient.health_record.allergies %></p>
-    <p><strong>Medications: </strong> <%= @patient.health_record.medications %></p>
-    <p><strong>Surgeries: </strong> <%= @patient.health_record.surgeries %></p>
-    <p><strong>Existing Conditions: </strong> <%= @patient.health_record.existing_conditions %></p>
-  </div>
+  <h3>Patient Health Record</h3>
+    <div class="health-record">
+      <p><strong>Allergies: </strong> <%= @patient.health_record.allergies %></p>
+      <p><strong>Medications: </strong> <%= @patient.health_record.medications %></p>
+      <p><strong>Surgeries: </strong> <%= @patient.health_record.surgeries %></p>
+      <p><strong>Existing Conditions: </strong> <%= @patient.health_record.existing_conditions %></p>
+    </div>
 
-<h3>Patient Health Status</h3>
-<% @patient.health_status_updates.each do |update| %>
-  <div class="health-status-update">
-    <p><strong>Date:</strong> <%= update.created_at.to_date.to_formatted_s(:long) %></p>
-    <p><strong>Respiratory Rate:</strong> <%= update.respiratory_rate %></p>
-    <p><strong>Heart Rate:</strong> <%= update.heart_rate %></p>
-    <p><strong>Body Temperature:</strong> <%= update.body_temperature %></p>
-    <p><strong>Blood Pressure:</strong> <%= update.blood_pressure %></p>
-    <p><strong>Physical Health Score:</strong> <%= update.physical_health_score %></p>
-    <p><strong>Mental Health Score:</strong> <%= update.mental_health_score %></p>
-    <p>*****</p>
-  </div>
-<% end %>
+  <h3>Patient Health Status</h3>
+  <% @patient.health_status_updates.each do |update| %>
+    <div class="health-status-update">
+      <p><strong>Date:</strong> <%= update.created_at.to_date.to_formatted_s(:long) %></p>
+      <p><strong>Respiratory Rate:</strong> <%= update.respiratory_rate %></p>
+      <p><strong>Heart Rate:</strong> <%= update.heart_rate %></p>
+      <p><strong>Body Temperature:</strong> <%= update.body_temperature %></p>
+      <p><strong>Blood Pressure:</strong> <%= update.blood_pressure %></p>
+      <p><strong>Physical Health Score:</strong> <%= update.physical_health_score %></p>
+      <p><strong>Mental Health Score:</strong> <%= update.mental_health_score %></p>
+      <p>*****</p>
+    </div>
+  <% end %>
+</div>

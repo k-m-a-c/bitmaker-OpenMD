@@ -1,12 +1,14 @@
-<h1><%= @doctor.first_name %> <%= @doctor.last_name %></h1>
-  <ul>
-    <li><%= @doctor.email %></li>
-    <li><%= @doctor.phone_number %></li>
-    <li><%= @doctor.gender %></li>
-    <li><%= @doctor.specialization %></li>
-    <li><%= @doctor.institution %></li>
-    <li><%= @doctor.city %></li>
-    <li><%= @doctor.country %></li>
-  </ul>
+<div class="main">
+  <h1><%= @doctor.first_name %> <%= @doctor.last_name %></h1>
+    <ul>
+      <li><strong>Email:</strong> <%= @doctor.email %></li>
+      <li><strong>Phone Number:</strong> <%= @doctor.phone_number %></li>
+      <li><strong>Gender:</strong> <%= @doctor.gender %></li>
+      <li><strong>Specialization:</strong> <%= @doctor.specialization %></li>
+      <li><strong>Institution:</strong> <%= @doctor.institution %></li>
+      <li><strong>City:</strong> <%= @doctor.city %></li>
+      <li><strong>Country:</strong> <%= @doctor.country %></li>
+    </ul>
 
-<p><%= link_to 'Edit my account', edit_doctor_registration_path(@doctor) %></p>
+  <p><%= button_to 'Edit my account', edit_doctor_registration_path(@doctor), method: :get %></p>
+</div>
