@@ -15,6 +15,7 @@
   <% current_patient.relationships.requests('pending', 'doctor').each do |c| %>
     <p><%= c.doctor.first_name %> <%= c.doctor.last_name %></p>
     <p><%= link_to 'Decline Connection Request',
-      delete_patient_connection_path(:id => c.id), :method => :delete %></p>
+      delete_patient_connection_path(:id => c.id), :method => :delete %> <%= link_to 'Accept Connection Request',
+      patient_accept_request_path(:id => c.id), :method => :patch %></p>
   <% end %>
 </div>
