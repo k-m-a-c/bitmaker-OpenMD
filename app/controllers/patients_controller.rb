@@ -8,8 +8,6 @@ class PatientsController < ApplicationController
 
   def status
     @health_status_updates = current_patient.health_status_updates
-    @respiratory_rate = current_patient.respiratory_rate
-    @heart_rate = current_patient.heart_rate
 
     @respiratory_chart_data = {}
     @health_status_updates.each do |u|

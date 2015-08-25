@@ -3,37 +3,38 @@ class DoctorRelationshipsController < ApplicationController
   around_action :is_patients_doctor?, only: :patient
 
   def patient
+    binding.pry
     @patient = current_doctor.patients.find(params[:id])
     @health_status_updates = @patient.health_status_updates
 
-    @respiratory_chart_data = {}
+    @patient_respiratory_chart_data = {}
     @health_status_updates.each do |u|
-      @respiratory_chart_data[u.created_at] = u.respiratory_rate
+      @patient_respiratory_chart_data[u.created_at] = u.respiratory_rate
     end
 
-    @heart_rate_chart_data = {}
+    @patient_heart_rate_chart_data = {}
     @health_status_updates.each do |u|
-      @heart_rate_chart_data[u.created_at] = u.heart_rate
+      @patient_heart_rate_chart_data[u.created_at] = u.heart_rate
     end
 
-    @body_temp_chart_data = {}
+    @patient_body_temp_chart_data = {}
     @health_status_updates.each do |u|
-      @body_temp_chart_data[u.created_at] = u.body_temperature
+      @patient_body_temp_chart_data[u.created_at] = u.body_temperature
     end
 
-    @blood_pressure_chart_data = {}
+    @patient_blood_pressure_chart_data = {}
     @health_status_updates.each do |u|
-      @blood_pressure_chart_data[u.created_at] = u.blood_pressure
+      @patient_blood_pressure_chart_data[u.created_at] = u.blood_pressure
     end
 
-    @physical_health_chart_data = {}
+    @patient_physical_health_chart_data = {}
     @health_status_updates.each do |u|
-      @physical_health_chart_data[u.created_at] = u.physical_health_score
+      @patient_physical_health_chart_data[u.created_at] = u.physical_health_score
     end
 
-    @mental_health_chart_data = {}
+    @patient_mental_health_chart_data = {}
     @health_status_updates.each do |u|
-      @mental_health_chart_data[u.created_at] = u.mental_health_score
+      @patient_mental_health_chart_data[u.created_at] = u.mental_health_score
     end
   end
 
