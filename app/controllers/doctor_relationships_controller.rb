@@ -3,7 +3,6 @@ class DoctorRelationshipsController < ApplicationController
   around_action :is_patients_doctor?, only: :patient
 
   def patient
-    binding.pry
     @patient = current_doctor.patients.find(params[:id])
   end
 
