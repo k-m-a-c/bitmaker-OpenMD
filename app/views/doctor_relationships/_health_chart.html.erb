@@ -1,30 +1,30 @@
-<h1 id="chart-header">Your vitals over time</h1>
+<h1 id="chart-header"><%= @patient.first_name %>'s Vitals Over Time</h1>
 <div class="chart">
   <h3 id='chart-title'>Respiratory Rate</h3>
-  <%= line_chart @respiratory_chart_data %>
+  <%= line_chart @patient_respiratory_chart_data %>
 </div>
 
 <div class="chart">
   <h3 id='chart-title'>Heart Rate</h3>
-  <%= line_chart @heart_rate_chart_data %>
+  <%= line_chart @patient_heart_rate_chart_data %>
 </div>
 
 <div class="chart">
   <h3 id='chart-title'>Body Temperature</h3>
-  <%= line_chart @body_temp_chart_data %>
+  <%= line_chart @patient_body_temp_chart_data %>
 </div>
 
 <div class="chart">
   <h3 id='chart-title'>Blood Pressure</h3>
-  <%= line_chart @blood_pressure_chart_data %>
+  <%= line_chart @patient_blood_pressure_chart_data %>
 </div>
 
 <div class="chart">
   <h3 id='chart-title'>Phyiscal Health Score</h3>
-  <%= line_chart @physical_health_chart_data %>
+  <%= line_chart @patient_physical_health_chart_data %>
 </div>
 
 <div class="chart">
   <h3 id='chart-title'>Mental Health Score</h3>
-  <%= line_chart @mental_health_chart_data %>
+  <%= line_chart @patient_mental_health_chart_data %>
 </div>

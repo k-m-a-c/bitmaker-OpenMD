@@ -224,3 +224,67 @@ relationship_list = [
 relationship_list.each do |relationship|
   Relationship.create(relationship)
 end
+
+# Provide list of initial health status updates
+health_status_update_list = [
+  {
+   respiratory_rate: 20,
+   heart_rate: 90,
+   body_temperature: 38,
+   blood_pressure: 125,
+   physical_health_score: 6,
+   mental_health_score: 6,
+   created_at: DateTime.now,
+   updated_at: nil,
+   patient_id: 18
+  },
+  {
+   respiratory_rate: 19,
+   heart_rate: 85,
+   body_temperature: 37,
+   blood_pressure: 120,
+   physical_health_score: 7,
+   mental_health_score: 7,
+   created_at: DateTime.new(2015,8,17),
+   updated_at: nil,
+   patient_id: 18
+  },
+  {
+   respiratory_rate: 18,
+   heart_rate: 83,
+   body_temperature: 37,
+   blood_pressure: 118,
+   physical_health_score: 8,
+   mental_health_score: 7,
+   created_at: DateTime.new(2015,8,16),
+   updated_at: nil,
+   patient_id: 18
+  },
+  {
+   respiratory_rate: 19,
+   heart_rate: 81,
+   body_temperature: 37,
+   blood_pressure: 115,
+   physical_health_score: 8,
+   mental_health_score: 7,
+   created_at: DateTime.new(2015,8,15),
+   updated_at: nil,
+   patient_id: 18
+  },
+  {
+   respiratory_rate: 19,
+   heart_rate: 80,
+   body_temperature: 36,
+   blood_pressure: 110,
+   physical_health_score: 8,
+   mental_health_score: 8,
+   created_at: DateTime.new(2015,8,14),
+   updated_at: nil,
+   patient_id: 18
+  }
+]
+
+# Create each health status update on the list
+health_status_update_list.each do |update|
+  HealthStatusUpdate.create(update)
+end

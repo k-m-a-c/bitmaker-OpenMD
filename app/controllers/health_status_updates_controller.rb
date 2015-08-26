@@ -20,7 +20,7 @@ class HealthStatusUpdatesController < ApplicationController
     @health_status_update.patient = current_patient
 
     if @health_status_update.save
-      redirect_to patient_health_status_updates_url
+      redirect_to patient_status_path(current_patient.id)
     else
       render :new
     end

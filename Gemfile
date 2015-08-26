@@ -40,6 +40,9 @@ gem 'slim'
 gem 'autoprefixer-rails'
 gem 'bourbon'
 gem 'neat'
+gem 'chartkick', '~> 1.2.4'
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0'
 
 group :test do
   gem 'shoulda'

@@ -1,9 +1,40 @@
 class DoctorRelationshipsController < ApplicationController
   before_filter :authenticate_doctor!
-  around_action :is_patients_doctor?, only: :patient
+  before_filter :is_patients_doctor?, only: [:patient]
 
   def patient
     @patient = current_doctor.patients.find(params[:id])
+    @health_status_updates = @patient.health_status_updates
+
+    @patient_respiratory_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_respiratory_chart_data[u.created_at] = u.respiratory_rate
+    end
+
+    @patient_heart_rate_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_heart_rate_chart_data[u.created_at] = u.heart_rate
+    end
+
+    @patient_body_temp_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_body_temp_chart_data[u.created_at] = u.body_temperature
+    end
+
+    @patient_blood_pressure_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_blood_pressure_chart_data[u.created_at] = u.blood_pressure
+    end
+
+    @patient_physical_health_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_physical_health_chart_data[u.created_at] = u.physical_health_score
+    end
+
+    @patient_mental_health_chart_data = {}
+    @health_status_updates.each do |u|
+      @patient_mental_health_chart_data[u.created_at] = u.mental_health_score
+    end
   end
 
   def patients
@@ -68,7 +99,7 @@ class DoctorRelationshipsController < ApplicationController
     @patient = Patient.find(params[:id])
 
     if @patient.doctors.include?(@doctor)
-      render params[:action].to_sym
+      params[:action].to_sym
     else
       render file: 'public/401.html', status: :unauthorized, layout: false
     end

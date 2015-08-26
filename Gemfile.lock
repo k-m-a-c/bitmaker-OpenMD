@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_median (0.1.2)
+      activerecord
     activejob (4.2.2)
       activesupport (= 4.2.2)
       globalid (>= 0.3.0)
@@ -51,6 +53,7 @@ GEM
       columnize (= 0.9.0)
     celluloid (0.16.1)
       timers (~> 4.0.0)
+    chartkick (1.2.5)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -78,6 +81,8 @@ GEM
       thor (~> 0.14)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    groupdate (2.1.1)
+      activerecord (>= 3.0.0)
     hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -249,12 +254,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_median (~> 0.1.0)
   autoprefixer-rails
   bourbon
   byebug
+  chartkick (~> 1.2.4)
   coffee-rails (~> 4.1.0)
   devise
   figaro
+  groupdate (~> 2.1.1)
   jbuilder (~> 2.0)
   jquery-rails
   mechanize

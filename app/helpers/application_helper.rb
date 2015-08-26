@@ -12,8 +12,8 @@ module ApplicationHelper
 
   def show_health_record_link
     if patient_signed_in?
-      link_to_unless_current('My Health Record',
-        patient_health_record_path(current_patient.id)
+      link_to_unless_current('My Health Status',
+        patient_status_path(current_patient.id)
       )
     end
   end
