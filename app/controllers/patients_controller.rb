@@ -7,6 +7,7 @@ class PatientsController < ApplicationController
   end
 
   def status
+    @patient = current_patient
     @health_status_updates = current_patient.health_status_updates
 
     @respiratory_chart_data = {}
@@ -38,7 +39,11 @@ class PatientsController < ApplicationController
     @health_status_updates.each do |u|
       @mental_health_chart_data[u.created_at] = u.mental_health_score
     end
+  end
 
+  def data_by_value
+    @vitals = current_patient.vitals
+    render json: @vitals.chart_json
   end
 
   def show

@@ -31,6 +31,58 @@ class Patient < ActiveRecord::Base
 
   validate :date_of_birth_is_in_the_past?
 
+  def vitals
+    data = [
+      {
+        name: "respiratory rate",
+        data: {}
+      },
+      {
+        name: "heart rate",
+        data: {}
+      },
+      {
+        name: "body temperature",
+        data: {}
+      },
+      {
+        name: "blood pressure",
+        data: {}
+      },
+      {
+        name: "physical health score",
+        data: {}
+      },
+      {
+        name: "mental health score",
+        data: {}
+      }
+    ]
+
+    self.health_status_updates.each do |u|
+      data.at(0)[:data] = {
+        u.created_at => u.respiratory_rate
+      }
+      data.at(1)[:data] = {
+        u.created_at => u.heart_rate
+      }
+      data.at(2)[:data] = {
+        u.created_at => u.body_temperature
+      }
+      data.at(3)[:data] = {
+        u.created_at => u.physical_health_score
+      }
+      data.at(4)[:data] = {
+        u.created_at => u.physical_health_score
+      }
+      data.at(5)[:data] = {
+        u.created_at => u.mental_health_score
+      }
+    end
+
+    return data
+  end
+
   # custom validations
   def date_of_birth_is_in_the_past?
     if date_of_birth.present? && date_of_birth > Date.tomorrow
