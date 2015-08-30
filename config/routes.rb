@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   get '/patients/:patient_id/status', to: 'patients#status',
     as: 'patient_status'
 
+  get '/patients/:patient_id/data_by_value', to: 'patients#data_by_value',
+    as: 'data_by_value'
+
   # Doctor Routes
   resources :doctors, only: [:index, :show]
 

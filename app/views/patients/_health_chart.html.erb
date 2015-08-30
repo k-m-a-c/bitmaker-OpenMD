@@ -1,4 +1,10 @@
 <h1 id="chart-header">Your vitals over time</h1>
+
+<div class="chart">
+  <h3 id="chart-title">All Vitals</h3>
+  <%= line_chart @all_vitals_chart_data %>
+</div>
+
 <div class="chart">
   <h3 id='chart-title'>Respiratory Rate</h3>
   <%= line_chart @respiratory_chart_data %>
