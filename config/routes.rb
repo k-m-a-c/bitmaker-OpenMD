@@ -74,7 +74,7 @@ Rails.application.routes.draw do
 
   # PATCH Accept
   patch '/doctors/:doctor_id/patient_request/:id/accept',
-    to: 'doctor_relationships#accept'
+    to: 'doctor_relationships#accept', as: 'doctor_accept_request'
 
   # GET Pending
   get '/doctors/:doctor_id/pending_patient_requests',
