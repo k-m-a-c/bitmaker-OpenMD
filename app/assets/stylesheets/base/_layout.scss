@@ -34,3 +34,23 @@ div#nav-menu {
   line-height: 4rem;
   font-size: 1.25rem;
 }
+
+.main{
+  padding: 4rem 1rem 4rem 1rem;
+  margin-bottom: 2rem;
+}
+
+h3#chart-title {
+    margin-left: 5rem;
+    position: relative;
+    margin-bottom: 0;
+}
+
+p.notice {
+    position: absolute;
+    margin: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+}
