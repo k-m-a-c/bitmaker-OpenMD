@@ -1,19 +1,8 @@
 <h1 id="chart-header">Your vitals over time</h1>
 
 <div class="chart">
-  <h3 id="chart-title">All vitals</h3>
-  <%= line_chart [
-    {name: "respiratory rate",
-     data: @health_status_updates.map{|u|
-      [u.created_at, u.respiratory_rate]
-     }
-    },
-    {name: "heart rate",
-     data: @health_status_updates.map{|u|
-      [u.created_at, u.heart_rate]
-     }
-    }
-  ] %>
+  <h3 id="chart-title">All Vitals</h3>
+  <%= line_chart @all_vitals_chart_data %>
 </div>
 
 <div class="chart">

@@ -35,48 +35,54 @@ class Patient < ActiveRecord::Base
     data = [
       {
         name: "respiratory rate",
-        data: {}
+        data: []
       },
       {
         name: "heart rate",
-        data: {}
+        data: []
       },
       {
         name: "body temperature",
-        data: {}
+        data: []
       },
       {
         name: "blood pressure",
-        data: {}
+        data: []
       },
       {
         name: "physical health score",
-        data: {}
+        data: []
       },
       {
         name: "mental health score",
-        data: {}
+        data: []
       }
     ]
 
     self.health_status_updates.each do |u|
-      data.at(0)[:data] = {
-        u.created_at => u.respiratory_rate
+      data.at(0)[:data] << {
+        date: u.created_at,
+        value: u.respiratory_rate
       }
-      data.at(1)[:data] = {
-        u.created_at => u.heart_rate
+      data.at(1)[:data] << {
+        date: u.created_at,
+        value: u.heart_rate
       }
-      data.at(2)[:data] = {
-        u.created_at => u.body_temperature
+      data.at(2)[:data] << {
+        date: u.created_at,
+        value: u.body_temperature
       }
-      data.at(3)[:data] = {
-        u.created_at => u.physical_health_score
+      data.at(3)[:data] << {
+        date: u.created_at,
+        value: u.physical_health_score
       }
-      data.at(4)[:data] = {
-        u.created_at => u.physical_health_score
+      data.at(4)[:data] << {
+        date: u.created_at,
+        value: u.physical_health_score
       }
-      data.at(5)[:data] = {
-        u.created_at => u.mental_health_score
+      data.at(5)[:data] << {
+        date: u.created_at,
+        value: u.mental_health_score
       }
     end
 
