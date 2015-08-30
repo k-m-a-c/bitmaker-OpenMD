@@ -9,6 +9,16 @@ module DoctorsHelper
         :patient_id => patient.id,
         :id => connection),
       :method => :post
+
+    elsif current_doctor.relationships.find_by(patient_id: patient.id, status: 'pending')
+      connection = current_doctor.relationships.find_by(patient_id: patient.id).id
+
+      link_to "Cancel connection request", delete_doctor_connection_path(
+        :doctor_id => current_doctor.id,
+        :patient_id => patient.id,
+        :id => connection),
+      :method => :post
+
     else
       link_to "Send connection request", doctor_connection_request_path(
         :doctor_id => current_doctor.id,
