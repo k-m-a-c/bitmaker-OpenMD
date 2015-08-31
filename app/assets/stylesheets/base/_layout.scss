@@ -46,11 +46,12 @@ h3#chart-title {
     margin-bottom: 0;
 }
 
-p.notice {
+p.notice, p.alert {
     position: absolute;
-    margin: 0 1rem 1rem 1rem;
+    margin: 4rem 1rem 1rem 2rem;
     padding: 1rem;
-    background-color: cornflowerblue;
+    background-color: $blue;
     color: white;
     border-radius: 5px;
+    z-index: 1;
 }
