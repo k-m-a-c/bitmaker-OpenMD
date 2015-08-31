@@ -47,8 +47,8 @@ h3#chart-title {
 }
 
 p.notice, p.alert {
-    position: absolute;
-    margin: 4rem 1rem 1rem 2rem;
+    position: relative;
+    margin: 1rem 1rem 2rem 1rem;
     padding: 1rem;
     background-color: $blue;
     color: white;

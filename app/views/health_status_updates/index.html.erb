@@ -1,14 +1,16 @@
-<h2>Health Status Updates</h2>
-<% @health_status_updates.each do |update| %>
-  <div class="health-status-update">
-    <p><strong>Created:</strong> about <%= time_ago_in_words(update.created_at) %> ago.</p>
-    <ul>
-      <li><%= update.respiratory_rate %></li>
-      <li><%= update.heart_rate %></li>
-      <li><%= update.body_temperature %></li>
-      <li><%= update.blood_pressure %></li>
-      <li><%= update.physical_health_score %></li>
-      <li><%= update.mental_health_score %></li>
-    </ul>
-  </div>
-<% end %>
+<div class="main">
+  <h2>Health Status Updates</h2>
+  <% @health_status_updates.each do |update| %>
+    <div class="health-status-update">
+      <p><strong>Created:</strong> about <%= time_ago_in_words(update.created_at) %> ago.</p>
+      <ul>
+        <li><%= update.respiratory_rate %></li>
+        <li><%= update.heart_rate %></li>
+        <li><%= update.body_temperature %></li>
+        <li><%= update.blood_pressure %></li>
+        <li><%= update.physical_health_score %></li>
+        <li><%= update.mental_health_score %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
