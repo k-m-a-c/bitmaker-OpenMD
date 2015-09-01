@@ -2,7 +2,7 @@
   <h3>Your Doctors</h3>
   <% current_patient.doctors.each do |doctor| %>
     <p><%= doctor.first_name %> <%= doctor.last_name %></p>
-    <p><%= link_to 'See Profile', doctor_path(doctor) %></p>
+    <p><%= link_to 'See Profile', patient_doctor_path(doctor.id) %></p>
   <% end %>
 
   <h3>Your Connection Requests to Doctors</h3>

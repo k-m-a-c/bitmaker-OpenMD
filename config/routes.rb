@@ -54,6 +54,10 @@ Rails.application.routes.draw do
   get '/patients/:patient_id/pending_doctor_requests',
   to: 'patient_relationships#pending', as: 'patient_pending_connections'
 
+  # GET a Specific Doctor
+  get 'patients/doctor/:id', to: 'patient_relationships#doctor',
+  as: 'patient_doctor'
+
   # GET Doctors
   get '/patients/:patient_id/doctors', to: 'patient_relationships#doctors',
     as: 'patient_doctors'

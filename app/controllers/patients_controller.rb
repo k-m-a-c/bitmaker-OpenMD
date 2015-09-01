@@ -6,11 +6,6 @@ class PatientsController < ApplicationController
     @doctors = Doctor.all
   end
 
-  def doctor
-    @doctor = current_patient.doctors.find(params[:doctor_id])
-
-  end
-
   def status
     @patient = current_patient
     @health_status_updates = current_patient.health_status_updates

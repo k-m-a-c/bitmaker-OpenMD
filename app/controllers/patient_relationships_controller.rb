@@ -1,5 +1,10 @@
 class PatientRelationshipsController < ApplicationController
   before_filter :authenticate_patient!
+  before_filter :is_doctors_patient?, only: [:doctor]
+
+  def doctor
+    @doctor = current_patient.doctors.find(params[:id])
+  end
 
   def doctors
     @doctors = current_patient.doctors
@@ -55,5 +60,16 @@ class PatientRelationshipsController < ApplicationController
   private
   def relationship_params
     params.require(:relationship).permit(:doctor_id, :relationship_id)
+  end
+
+  def is_doctors_patient?
+    @patient = Patient.find(current_patient.id)
+    @doctor = Doctor.find(params[:id])
+
+    if @doctor.patients.include?(@patient)
+      params[:action].to_sym
+    else
+      render file: 'public/401.html', status: :unauthorized, layout: false
+    end
   end
 end
