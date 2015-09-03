@@ -42,6 +42,9 @@ GEM
     autoprefixer-rails (5.2.1.3)
       execjs
       json
+    autoscaler (0.9.0)
+      heroku-api
+      sidekiq (>= 2.7, < 3.1)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -50,8 +53,47 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     byebug (6.0.2)
-    celluloid (0.16.0)
-      timers (~> 4.0.0)
+    celluloid (0.17.1.2)
+      bundler
+      celluloid-essentials
+      celluloid-extras
+      celluloid-fsm
+      celluloid-pool
+      celluloid-supervision
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
+    celluloid-essentials (0.20.2.1)
+      bundler
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
+    celluloid-extras (0.20.1)
+      bundler
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
+    celluloid-fsm (0.20.1)
+      bundler
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
+    celluloid-pool (0.20.1)
+      bundler
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
+    celluloid-supervision (0.20.1.1)
+      bundler
+      dotenv
+      nenv
+      rspec-logsplit (>= 0.1.2)
+      timers (>= 4.1.1)
     chartkick (1.2.5)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -73,7 +115,9 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.0.2)
     erubis (2.7.0)
+    excon (0.45.4)
     execjs (2.6.0)
     figaro (1.1.1)
       thor (~> 0.14)
@@ -81,6 +125,9 @@ GEM
       activesupport (>= 4.1.0)
     groupdate (2.1.1)
       activerecord (>= 3.0.0)
+    heroku-api (0.3.23)
+      excon (~> 0.44)
+      multi_json (~> 1.8)
     hitimes (1.2.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -88,7 +135,7 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (4.0.4)
+    jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -114,6 +161,7 @@ GEM
     neat (1.7.2)
       bourbon (>= 4.0)
       sass (>= 3.3)
+    nenv (0.2.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
     nokogiri (1.6.6.2)
@@ -174,6 +222,7 @@ GEM
     rspec-expectations (3.3.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
+    rspec-logsplit (0.1.3)
     rspec-mocks (3.3.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
@@ -202,12 +251,12 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
-    sidekiq (3.4.2)
-      celluloid (~> 0.16.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      json (~> 1.0)
-      redis (~> 3.2, >= 3.2.1)
-      redis-namespace (~> 1.5, >= 1.5.2)
+    sidekiq (3.0.2)
+      celluloid (>= 0.15.2)
+      connection_pool (>= 2.0.0)
+      json
+      redis (>= 3.0.6)
+      redis-namespace (>= 1.3.1)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -217,7 +266,7 @@ GEM
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
     spring (1.3.6)
-    sprockets (3.3.3)
+    sprockets (3.3.4)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
@@ -227,7 +276,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    timers (4.0.1)
+    timers (4.1.1)
       hitimes
     turbolinks (2.5.3)
       coffee-rails
@@ -254,6 +303,7 @@ PLATFORMS
 DEPENDENCIES
   active_median (~> 0.1.0)
   autoprefixer-rails
+  autoscaler
   bourbon
   byebug
   chartkick (~> 1.2.4)

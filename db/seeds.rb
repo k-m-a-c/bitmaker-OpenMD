@@ -236,7 +236,7 @@ health_status_update_list = [
    mental_health_score: 6,
    created_at: DateTime.now,
    updated_at: nil,
-   patient_id: 18
+   patient_id: Patient.first.id
   },
   {
    respiratory_rate: 19,
@@ -247,7 +247,7 @@ health_status_update_list = [
    mental_health_score: 7,
    created_at: DateTime.new(2015,8,17),
    updated_at: nil,
-   patient_id: 18
+   patient_id: Patient.first.id
   },
   {
    respiratory_rate: 18,
@@ -258,7 +258,7 @@ health_status_update_list = [
    mental_health_score: 7,
    created_at: DateTime.new(2015,8,16),
    updated_at: nil,
-   patient_id: 18
+   patient_id: Patient.first.id
   },
   {
    respiratory_rate: 19,
@@ -269,7 +269,7 @@ health_status_update_list = [
    mental_health_score: 7,
    created_at: DateTime.new(2015,8,15),
    updated_at: nil,
-   patient_id: 18
+   patient_id: Patient.first.id
   },
   {
    respiratory_rate: 19,
@@ -280,7 +280,7 @@ health_status_update_list = [
    mental_health_score: 8,
    created_at: DateTime.new(2015,8,14),
    updated_at: nil,
-   patient_id: 18
+   patient_id: Patient.first.id
   }
 ]
 

@@ -32,6 +32,9 @@ gem 'mechanize'
 # Use Sidekiq for delayed job processing
 gem 'sidekiq'
 
+# Use Autoscaler for managing number of worker dynos on Heroku
+gem 'autoscaler'
+
 # For Sidekiq web dashboard
 gem 'sinatra', require: false
 gem 'slim'
