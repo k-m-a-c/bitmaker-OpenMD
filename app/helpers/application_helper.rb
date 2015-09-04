@@ -56,11 +56,12 @@ module ApplicationHelper
   end
 
   def show_flash_contents
-
-    if !flash.nil? && !flash[:notice].nil?
-      render partial: 'shared/flash_notice'
-    elsif !flash.nil? && !flash[:alert].nil?
-      render partial: 'shared/flash_alert'
+    unless params[:controller] == "welcome" && params[:action] == "index"
+      if !flash.nil? && !flash[:notice].nil?
+        render partial: 'shared/flash_notice'
+      elsif !flash.nil? && !flash[:alert].nil?
+        render partial: 'shared/flash_alert'
+      end
     end
   end
 

@@ -7,6 +7,7 @@
   $hero-color: white;
   $gradient-angle: 10deg;
   $hero-image: image-url('background.jpg');
+  overflow: hidden;
 
   @include background($hero-image, linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
   background-position: top;
